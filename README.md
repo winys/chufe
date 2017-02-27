@@ -2,4 +2,4 @@
 
 ----------------------
 
-An single-page framework based on jQuery!
+A single-page framework based on jQuery!
