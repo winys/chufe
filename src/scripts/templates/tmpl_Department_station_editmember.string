@@ -1,0 +1,24 @@
+<div type="text/html" id="tmpl_Department_station_editmember"  data-title="修改用户岗位">
+	<div>
+		<form autocomplete="off">
+			<input type="hidden" name="level" value="{{level}}">
+			<input type="hidden" name="userid" value="{{id}}">
+			<div class="formcontent">
+				<div class="item ">
+					<label>
+						<span class="item_name">重新分配岗位</span>
+						<select name="stationid" class="stationselect">
+							{{#each data.stationlist}}
+							<option value="{{@key}}">{{this}}</option>
+							{{/each}}
+						</select>
+					</label>
+				</div>
+			</div>
+			<div class="op">
+				<a class="btn" data-sureconceal data-submit="/Department/station/editmember">确定</a>
+				<a class="btn" data-conceal>取消</a>
+			</div>
+		</form>
+	</div>
+</div>

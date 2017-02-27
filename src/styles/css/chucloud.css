@@ -1,0 +1,1265 @@
+/*******************************************************
+*          Loadbar 加载进度条 Winys@2015/2/1           *
+********************************************************/
+.load_text{
+	font-size: 15px;
+	color:#333;
+	text-align: center;
+}
+.load_bar{
+	margin: 0 auto;
+	background-color: #0BC03E;
+	border-radius: 13px;
+	display: block;	
+}
+.load_bar .progress_bar{
+	background-color: #044D18;
+	border-radius: 13px;
+	display: block;
+	height: 100%;
+	width: 0px;
+}
+/*******************************************************
+*        MenuView 菜单显示插件 Winys@2015/2/2          *
+********************************************************/
+.MenuView{
+	width: 100%;
+	height: 100%;
+	font-size: 14px;
+}
+.MenuView .menu_tree{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+	padding-bottom: 30px; 
+}
+.MenuView .menu_ul{	
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	list-style-type: none;	
+}
+.menu_ul .menu_li{
+	line-height: 2em;
+}
+.menu_li .link{
+	color: #c0c1c4;
+	display: block;
+	padding: 6px 10px;
+}
+.menu_li .link:hover{
+	color: #FFF;
+}
+.menu_li .link .text{
+	font-size: 14px;
+	font-weight: 700;
+}
+.MenuView .menu-icon{
+	display: inline-block;
+	width: 28px;
+	text-align: center;
+	margin-right: 6px;
+}
+.MenuView .has_item > a{
+	position: relative;
+}
+.MenuView .has_item > a::after{
+	content: '\f107';
+	font-family: FontAwesome;
+	color: #c0c1c4;
+	position: absolute;
+	font-size: 12px;
+	font-weight: 400;
+	right: 20px;
+	opacity: .4;
+}
+.MenuView .has_item.selected > a::after{
+	content: '\f106';
+}
+.MenuView .has_item.selected{
+	background-color: #2b2b38;
+}
+.MenuView .no_item.selected{
+	background-color: #57b382;
+}
+.MenuView .no_item.selected:hover{
+	background-color: #4BA575;
+}
+.MenuView .no_item.selected a{
+	color: #FFF;
+}
+.MenuView .hide{
+	display: none;
+}
+.MenuView .show{
+	display: block;
+}
+.MenuView .toggle{
+	color: #c0c1c4;
+	width: 100%;
+	height: 30px;
+	border-top: solid 1px #777;
+	font-size: 14px;
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	line-height: 30px;
+	background-color: #22222C;
+}
+.MenuView .toggle span{
+	line-height: 29px;
+	cursor: pointer;
+}
+div.folder{
+	width: 50px;	
+}
+.folder .menu_tree{
+	overflow-y: hidden;
+	display: inline;
+}
+.folder .menu_tree li i{
+	line-height: 2em;
+}
+.folder .MenuView li .level-2{
+	display: none;
+}
+.folder .menu_tree>ul>li>a>.text{
+	display: none;
+}
+.folder .menu_tree .has_item > a::after{
+	content: '';
+}
+.folder .menu_tree .has_item:hover{
+	position: relative;
+	background-color: #2b2b38;
+}
+.folder .menu_tree .has_item .level-2{
+	display: none;
+	position: absolute;
+	left:50px;
+	top:0px;
+	width: 200px;
+	background: #2b2b38;
+
+}
+.folder .menu_tree .has_item:hover .level-2{
+	display: block;
+}
+
+/*******************************************************
+*        Dropdown 下拉框 Winys@2015/2/2                *
+********************************************************/
+.dropdown {
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+	text-align: left;
+}
+.dropdown .disable{
+	cursor: no-drop !important;
+	color : #D4D4D4 !important;
+}
+.dropdown .dropdown_text{
+	cursor: pointer;
+	position: absolute;
+	text-indent: 10px;
+	line-height: 30px;
+	width: 100%;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.dropdown .dropdown_text:after{
+	position: absolute;
+	right: 6px;
+	top: 15px;
+	content: '';
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 5px 4px 0;
+}
+.dropdown .dropdown_items {
+	-webkit-transition: all .25s ease;
+	-moz-transition: all .25s ease;
+	-ms-transition: all .25s ease;
+	-o-transition: all .25s ease;
+	-webkit-transition: all;
+	-moz-transition: all;
+	-o-transition: all;
+	list-style-type: none;
+	position: absolute;
+	z-index: 2;
+	top: 34px;
+	padding: 0;
+	margin: 0;
+	opacity: 0;
+	visibility: hidden;
+	line-height: 30px;
+	width: 100%;
+	
+}
+.dropdown.open .dropdown_items{
+	opacity: 1;
+	visibility: visible;
+}
+.def_dropdown.open .dropdown_text:after{
+	border-width: 0 4px 5px;
+}
+/* 默认样式 */
+.def_dropdown{	
+	width: 150px;
+	height: 30px;
+}
+.def_dropdown .dropdown_text{
+	border-bottom: 2px solid #57B382;	
+	background: #57B382;
+	color: #fff;
+}
+.def_dropdown .dropdown_text:after{
+	border-color: #fff transparent transparent;
+}
+.def_dropdown.open .dropdown_text:after{
+	border-color: transparent transparent #fff;
+}
+.def_dropdown .dropdown_items {
+	background-color: #3b3f4e;	
+}
+.def_dropdown .dropdown_items li{
+	padding: 0 5px;
+	color: #c0c1c4;
+	font-size: 12px;
+}
+.def_dropdown .dropdown_items li:hover{
+	cursor: pointer;
+	color: #FFF;
+}
+.def_dropdown .dropdown_items li span{
+	padding-left: 8px;
+}
+
+/*******************************************************
+*         Dialog 下拉框 Winys@2015/2/2                 *
+********************************************************/
+.dialog_bkg{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background: -moz-radial-gradient(center,ellipse cover,rgba(0,0,0,0) 0,rgba(0,0,0,.65) 100%);
+	background: -webkit-gradient(radial,center center,0,center center,100%,color-stop(0%,rgba(0,0,0,0)),color-stop(100%,rgba(0,0,0,.65)));
+	background: -webkit-radial-gradient(center,ellipse cover,rgba(0, 0, 0, 0) 0,rgba(0, 0, 0, 0.65) 100%);
+	background: -o-radial-gradient(center,ellipse cover,rgba(0,0,0,0) 0,rgba(0,0,0,.65) 100%);
+	background: -ms-radial-gradient(center,ellipse cover,rgba(0,0,0,0) 0,rgba(0,0,0,.65) 100%);
+	background: radial-gradient(ellipse at center,rgba(0, 0, 0, 0) 0,rgba(0, 0, 0, 0.65) 100%);
+	z-index: 101;
+}
+.dialog{
+	position: absolute;
+	display: inline-block;
+	top:30%;
+	left: 40%;
+	min-width: 200px;
+	min-height: 100px;
+	background-color: #FFF;
+	-webkit-box-shadow: 0 0 55px 4px #555;
+	-moz-box-shadow: 0 0 55px 4px #555;
+	box-shadow: 0 0 55px 4px #555;
+}
+.dialog .headbar{
+	position: relative;
+	color: #FFF;
+	overflow: hidden;
+	font-size: 20px;
+	padding: 5px 10px;
+	height: 40px;
+	background: #2A2D2E;
+	cursor: move;
+}
+.dialog .headbar h4{
+	font-size: 16px;
+	line-height: 30px;
+}
+.dialog .headbar .times{
+	position: absolute;
+	color: #EEE;
+	top: 6px;
+	right: 14px;
+	cursor: pointer;
+}
+.dialog .form{
+	padding: 5px 10px;
+}
+
+
+/*******************************************************
+*          Actionbar 行为栏 Winys@2015/2/3             *
+********************************************************/
+.actionbar{
+	height: 48px;
+	background: #FFF;
+	width: 100%;
+	z-index: 99;
+}
+.actionbar .inner{
+	height: 48px;
+	-webkit-box-shadow: 0 -1px 8px 0 #BBB;
+	-moz-box-shadow: 0 -1px 8px 0 #BBB;
+	box-shadow: 0 -1px 8px 0 #BBB;
+}
+.actionbar .items{
+	float: right;
+}
+.actionbar  .items .item{
+	display: inline-block;
+	border-left: 1px solid #EEE;
+	height: 48px;
+	vertical-align: middle;
+	position: relative;
+}
+.actionbar .items .item > a{
+	display: block;
+	padding: 0 20px;
+	height: 48px;
+	position: relative;
+}
+.actionbar .items .item.disable:hover > a{
+	cursor: no-drop;
+	background-color: #D4D4D4;
+
+}
+.actionbar .items .item a:hover{
+	background: #F8F8F8;
+}
+.actionbar .items .item i{
+	color: #555;
+}
+.actionbar .items .item a span{
+	color: #333;
+	padding-left: 10px;
+	line-height: 48px;
+	vertical-align: middle;
+}
+/*******************************************************
+*          PopBox 弹出层 Winys@2015/2/4             *
+********************************************************/
+
+.popbox{
+	position: absolute;
+	right: -1px;
+	top: 48px;
+	z-index: 10;
+}
+.popbox .popbox-inner{
+	height: auto;
+	background: #FFF;
+	border: 1px solid #DDD;
+	min-width: 160px;
+	-webkit-box-shadow: 0 1px 2px 1px #E7E7E7;
+	-moz-box-shadow: 0 1px 2px 1px #e7e7e7;
+	box-shadow: 0 1px 2px 1px #E7E7E7;
+}
+.popbox.hide{
+	display: none;
+}
+
+/*******************************************************
+*        TimeTree 下拉框 Winys@2015/2/4                *
+********************************************************/
+.timetree{	
+	min-width: 300px;
+}
+.timetree-inner{
+	background-color: #FFF;
+	height: auto;
+}
+.timetree-inner .timetree-title{
+	padding: 5px 20px;
+	font-weight: 700;
+	margin: 0;
+	font-size: 16px;
+	line-height: 20px;
+}
+
+.timetree-inner .timetree-title a{
+	font-size: 12px;
+	font-weight: 400;
+	padding: 0 10px;
+}
+.timetree-inner .timetree-items{
+	border-left: 3px solid #EEE;
+	padding: 0 0 20px 20px;
+	margin: 20px 15px 10px 30px;
+}
+.timetree-inner .item-status{
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	-webkit-border-radius: 3em;
+	-moz-border-radius: 3em;
+	border-radius: 3em;
+	margin-left: -30px;
+	margin-top: -2px;
+	float: left;
+	border: 3px solid #FFF;
+}
+.timetree-inner .item-status.success{
+	background: #A5D6A7;
+	-webkit-box-shadow: 0 0 0 1px #A5D6A7;
+	-moz-box-shadow: 0 0 0 1px #a5d6a7;
+	box-shadow: 0 0 0 1px #A5D6A7;
+}
+.timetree-inner .item-status.fail{
+	background: #ff6a6a;
+	-webkit-box-shadow: 0 0 0 1px #ff6a6a;
+	-moz-box-shadow: 0 0 0 1px #ff6a6a;
+	box-shadow: 0 0 0 1px #ff6a6a;
+}
+.timetree-inner .item-details{
+	margin: 0 10px 20px 0;
+	background: #F8F8F8;
+	padding: 12px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.timetree-inner .item-details .acation{
+	color: #333;
+	font-size: 14px;
+}
+.timetree-inner .item-details .consumed{
+	font-size: 12px;
+	color: #777;
+	vertical-align: top;
+	background: #F8F8F8;
+	padding: 2px 6px;
+	-webkit-border-radius: 3em;
+	-moz-border-radius: 3em;
+	border-radius: 3em;
+	margin-top: -3px;
+	float: right;
+}
+.timetree-inner .item-details .actiontime{
+	display: block;
+	font-size: 12px;
+	color: #777;
+	line-height: 1.8em;
+}
+.timetree-inner .item-details .resouces{
+	color: #777;
+	margin: 10px 0;
+	line-height: 1.6em;
+}
+.timetree-inner .item-details .resouces li{
+	margin: 2px 0;
+}
+
+/*******************************************************
+*        ToolTip 提示 Winys@2015/2/4                *
+********************************************************/
+
+.tooltip{
+	position: absolute;
+	z-index: 1030;
+	display: block;
+	font-size: 11px;
+	font-style: normal;
+	line-height: 1.4;
+	opacity: 0;
+	visibility: visible;
+}
+.tooltip{
+	opacity: .8;
+}
+.tooltip.top{
+	padding: 5px 0;
+	margin-top: -3px;
+}
+.tooltip.right{
+	padding: 0 5px;
+	margin-right: -3px;
+}
+.tooltip.bottom{
+	padding: 5px 0;
+	margin-bottom: -3px;
+}
+.tooltip.left{
+	padding: 0 5px;
+	margin-left: -3px;
+}
+
+.tooltip.bottom{
+	padding: 5px 0;
+	margin-bottom: -3px;
+}
+.tooltip .tooltip-arrow{
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-color: rgba(0, 0, 0, 0);
+	border-style: solid;
+}
+.tooltip.top .tooltip-arrow{
+	bottom: 0;
+	left: 50%;
+	margin-left: -5px;
+	border-top-color: #000;
+	border-width: 5px 5px 0;
+}
+.tooltip.bottom .tooltip-arrow{
+	top: 0;
+	left: 50%;
+	margin-left: -5px;
+	border-bottom-color: #000;
+	border-width: 0 5px 5px;
+}
+.tooltip.left .tooltip-arrow{
+	top: 50%;
+	right: 0;
+	margin-top: -5px;
+	border-left-color: #000;
+	border-width: 5px 0 5px 5px;
+}
+.tooltip.right .tooltip-arrow{
+	top: 50%;
+	left: 0;
+	margin-top: -5px;
+	border-right-color: #000;
+	border-width: 5px 5px 5px 0;
+}
+.tooltip .tooltip-inner{
+	max-width: 250px;
+	padding: 8px;
+	color: #FFF;
+	text-align: center;
+	text-decoration: none;
+	background-color: #000;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+
+/*******************************************************
+*                Tab 选项卡  Winys@2015/3/6            *
+********************************************************/
+
+.tabs{
+	background: #E4EAEC;
+	padding: 0 20px;
+}
+.tabs .item{
+	cursor: pointer;
+	display: inline-block;
+	margin-right: 5px;
+}
+.tabs .item.disabled{
+	cursor: no-drop;
+}
+.tabs .item a {
+	padding: 10px 20px;
+	font-size: 12px;
+	display: inline-block;
+	-webkit-border-radius: 3px 3px 0 0;
+	-moz-border-radius: 3px 3px 0 0;
+	border-radius: 3px 3px 0 0;
+	background: #D6DFE2;
+	color: #58666E;
+}
+.tabs .item.active a {
+	background: #FFF;
+	font-weight: 700;
+}
+
+/*******************************************************
+*                Button 按钮  Winys@2015/2/1           *
+********************************************************/
+
+.btn{
+	display: inline-block;
+	padding: 7px 16px;
+	margin: 0 3px 0 0;
+	font-size: 12px;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	background: #3B3F4E;
+	color: #FFF;
+	border: 0 none;
+	border-bottom: 2px solid #353946;
+	-webkit-appearance: none;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-transition: all .1s ease-in;
+	-moz-transition: all .1s ease-in;
+	-o-transition: all .1s ease-in;
+}
+.btn-forbidden,.btn-group.btn-forbidden .btn,.btn-primary.btn-forbidden,.btn-danger.btn-forbidden {
+    cursor: no-drop;
+    color: #b8b8b8;
+    background: #ececec;
+    border-bottom-color: #d4d4d4
+}
+
+.btn-forbidden:hover,.btn-group.btn-forbidden .btn:hover,.btn-primary.btn-forbidden:hover,.btn-danger.btn-forbidden:hover {
+    color: #b8b8b8;
+    background: #ececec
+}
+
+.btn-forbidden {
+    cursor: no-drop
+}
+
+.btn-primary {
+    color: #FFF;
+    background: #57B382 none repeat scroll 0% 0%;
+    border-bottom-color: #4BA575;
+}
+/*******************************************************
+*            Breadcrumb 面包屑 Chujie@2015/2/1           *
+********************************************************/
+.breadcrumb {
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  list-style: none;
+  border-radius: 4px;
+  font-family: Arial,"Hiragino Sans GB","Microsoft YaHei","微软雅黑",STHeiti,"WenQuanYi Micro Hei",SimSun,sans-serif;
+
+}
+.breadcrumb li {
+  display: inline-block;
+  padding: 1px ;
+  border-radius: 2px;
+  margin-right: 2px;
+}
+
+.breadcrumb .level-area {
+  padding: 1px 6px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  margin-right: 5px;
+}
+.breadcrumb .level.level-area a{
+  color: #FFF;
+}
+.breadcrumb .level-area a:hover{
+  color: #FFF;
+}
+.breadcrumb .level:before {
+  padding: 0 5px;
+  color: #ccc;
+  content: "/\00a0";
+}
+.breadcrumb .level:first-child::before {
+  content: '';
+  padding: 0;
+}
+.breadcrumb .level a {
+  color: #777;
+}
+.breadcrumb li a:hover{ 
+	color: #57B382;
+}
+.bj{ 
+	background-color : #6EBBE5;
+}
+.gd{ 
+	background-color : #8CC85C;
+}
+.yt{ 
+	background-color : #9067BD;
+}
+/*******************************************************
+*                table 表格  scott@2015/3/12            *
+********************************************************/
+table {
+    max-width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 15px 0;
+    background: #fff
+}
+.table {
+    width: 100%;
+    clear: both
+}
+.table caption {
+    display: none
+}
+.table th, .table td {
+    padding: 10px;
+    font-weight: 400;
+    font-size: 12px;
+    empty-cells: show
+}
+.table td.operations a {
+    margin-right: 8px
+}
+.table th {
+    text-align: left;
+    border: 0 none
+}
+.table th .tooltip {
+    color: #1f90c8
+}
+.table thead th {
+    background: #e4eaec;
+    color: #58666e
+}
+.table .checkbox, .table .operate {
+    text-align: center
+}
+.table .left {
+    text-align: left
+}
+.table .right {
+    text-align: right
+}
+.table th.total {
+    background: #dff0d8
+}
+.table td.total {
+    background: #eff8eb
+}
+.table-bordered {
+    border-collapse: separate;
+    border: 1px solid #e4eaec;
+    border-bottom: 0;
+    border-left: 0
+}
+.table-bordered th, .table-bordered td {
+    border-bottom: 1px solid #e4eaec;
+    border-left: 1px solid #e4eaec
+}
+.table-bordered tr.selected {
+    background: #dff0d8
+}
+.table-bordered tr.idle {
+    background: #f3f3f3;
+    color: #ccc
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover td {
+    background: #f2f5f6
+}
+.table-hover tbody tr td.total {
+    background: #eff8eb
+}
+.table tbody tr.selected td {
+    background-color: #f2f5f6!important
+}
+.table tbody tr.forbidden td {
+    background-color: #ececec!important;
+    color: #b8b8b8;
+    cursor: no-drop
+}
+
+td.operate{
+    text-align: center;
+    vertical-align: middle;
+    font-size: 16px;
+
+}
+td.operate span{
+   margin-right: 10px;
+   cursor: pointer;
+}
+td.operate span:hover{
+  color:#57B382;
+}
+.toolbar{
+	position:fixed;
+	margin-top: -10px;
+	padding-top:15px;
+	padding-bottom:5px;
+	margin-bottom:10px;
+	background-color:white;
+	z-index:1;
+	/*padding: 15px 20px 5px 20px;*/
+}
+.toolbar+div .table{
+	margin-top: 50px;
+}
+/*******************************************************
+*                pagination 分页  Weikai@2015/3/26       *
+********************************************************/
+.pagination {
+    color: #777;
+    float:right;
+}
+
+.pagination .tiny {
+    width: 50px;
+    text-align: center;
+    vertical-align: top;
+    padding: 5px;
+}
+
+.pagination .btn {
+    margin: 0 0 0 5px;
+}
+
+.pagination .per-page,.pagination .pages {
+    line-height: 33px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.pagination .pages {
+    margin-left: 8px;
+}
+
+.pagination .select-con {
+    height: 29px;
+    margin-right: 0;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.pagination .select-con::after {
+    top: 12px
+}
+
+.pagination .dropdown-select {
+    padding: 6px 21px 6px 10px;
+    height: 100%;
+}
+
+.select-con {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+    margin: 0 10px 0 0;
+    position: relative;
+    height: 31px;
+    border: 2px solid #cbcad8;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-image: -webkit-linear-gradient(top,#fff,#ebebeb);
+    background-image: -moz-linear-gradient(top,#fff,#ebebeb);
+    background-image: -o-linear-gradient(top,#fff,#ebebeb);
+    background-image: linear-gradient(to bottom,#fff,#ebebeb);
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.08);
+    -moz-box-shadow: 0 1px 1px rgba(0,0,0,.08);
+    box-shadow: 0 1px 1px rgba(0,0,0,.08);
+}
+
+.select-con:after {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    top: 15px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 4px dashed;
+    border-color: #888 transparent transparent;
+    pointer-events: none;
+}
+.dropdown-select {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 6px 28px 6px 10px;
+    height: 31px;
+    line-height: 12px;
+    font-size: 12px;
+    -webkit-text-shadow: 0;
+    -moz-text-shadow: 0;
+    text-shadow: 0;
+    background: rgba(0,0,0,0)!important;
+    border: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+}
+
+.dropdown-select:focus {
+    z-index: 3;
+    width: 100%;
+    outline: 2px solid #49aff2;
+    outline: 2px solid -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+.dropdown-select>option {
+    margin: 3px;
+    padding: 6px 8px;
+    -webkit-text-shadow: none;
+    -moz-text-shadow: none;
+    text-shadow: none;
+    background: #f2f2f2;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/********************************************************
+ *          Toast 分页 winys@2015/4/17                  *
+ ********************************************************/
+ .toast{
+ 	display: none;
+ 	position: absolute;
+ 	min-width: 300px;
+ 	max-width: 600px;
+ 	text-align: center;
+ 	font-size: 14px; 	
+	border-radius: 3px;	
+	line-height: 40px;
+	z-index: 1000;
+ }
+ .toast.default{
+ 	background: #676767;
+	color: #FFF;
+ }
+ .toast.success{
+ 	background: #57B382;
+	color: #FFF;
+	font-weight: 600;
+ }
+ .toast.error{
+ 	background: #EC6666;
+	color: #FFF;	
+	font-weight: 600;
+ }
+
+
+/*******************************************************
+*        textarea 显示 scott@2015/6/02          *
+********************************************************/
+
+textarea{
+	width:600px;
+	height:auto;
+	font-family: inherit;
+	font-size: 12px;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	border-radius:3px
+}
+
+
+
+textarea{
+	border:0 none;
+	border:2px solid #cbcad8;
+	background:#fff;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	border-radius:3px;
+	-webkit-appearance:none;
+	rgba(0,0,0,.075)
+}
+
+textarea:focus{
+	border-color:#57b382;
+	outline:0
+}
+
+/*******************************************************
+*        input 显示 scott@2015/7/03          *
+********************************************************/
+.se_input{
+	width:100%;
+	height: 100%;
+	border: none;
+	font-size: 15px;
+	}
+
+
+input[type="text"]{
+	width:600px;
+	height:auto;
+	font-family: inherit;
+	font-size: 12px;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	border-radius:3px
+}
+
+
+
+input[type="text"]{
+	border:0 none;
+	border:2px solid #cbcad8;
+	background:#fff;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	border-radius:3px;
+	-webkit-appearance:none;
+	rgba(0,0,0,.075)
+}
+
+input[type="text"]:focus{
+	border-color:#57b382;
+	outline:0
+}
+
+/********************************************************
+ *		  Optionbtn 流程 winys@2015/6/8    			    *
+ ********************************************************/
+
+.optionbtn li{ 	
+	padding: 20px 0;
+	background: #fff;
+	color: #1f90c8;
+	border: 1px solid #cfeaf8;
+	font-size: 16px;
+	margin: 0 4px;
+	cursor: pointer;
+	text-align: center;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	overflow: hidden;
+}
+.optionbtn .inline{
+	display: inline-block;
+}
+.optionbtn .selected {
+  border: 1px solid #1c82b4;
+  background: #1f90c8;
+  color: #fff;
+}
+
+/********************************************************
+ *          seekbar 滑块 bootstrap@2012                  *
+ ********************************************************/
+.seekbar {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+.seekbar.seekbar-horizontal {
+  width: 210px;
+  height: 20px;
+  vertical-align: baseline;
+  margin-right:10px;
+}
+.seekbar.seekbar-horizontal .seekbar-track {
+  height: 20px;
+  width: 100%;
+  margin-top: -5px;
+  top: 50%;
+  left: 0;
+}
+.seekbar.seekbar-horizontal .seekbar-selection {
+  height: 100%;
+  top: 0;
+  bottom: 0;
+}
+.seekbar.seekbar-horizontal .seekbar-handle {
+  margin-left: -10px;
+  margin-top: -5px;
+}
+.seekbar.seekbar-vertical {
+  height: 210px;
+  width: 20px;
+}
+.seekbar.seekbar-vertical .seekbar-track {
+  width: 10px;
+  height: 100%;
+  margin-left: -5px;
+  left: 50%;
+  top: 0;
+}
+.seekbar.seekbar-vertical .seekbar-selection {
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+.seekbar.seekbar-vertical .seekbar-handle {
+  margin-left: -6px;
+  margin-top: -6px;
+}
+.seekbar input {
+  display: none;
+}
+.seekbar-track {
+	position: absolute;
+	cursor: pointer;
+	background-color: #eee;
+	background-repeat: repeat-x;
+	-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+	-moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+	box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.seekbar-selection {
+	position: absolute;
+	background-color: #bce1cd;
+	-webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+	-moz-box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+	box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+	box-sizing: border-box;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.seekbar-handle {
+  position: absolute;
+  width: 12px;
+  height: 30px;
+  background-color: #57b382;
+  border: 1px solid #429368;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2);
+  -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.2);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+/********************************************************
+ *          Treeview 树形结构 jquery.treeview@--         *
+ ********************************************************/
+.treeview, .treeview ul { 
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.treeview li { 
+	margin: 0;
+	padding: 3px 0pt 3px 0px;
+	font-size: 14px;
+}
+.treeview a{
+	cursor: pointer;
+	display: block;
+	padding: 3px;
+}
+.treeview li.active {
+	background-color: #eee;
+}
+.treeview .hide{
+	display: none; 
+}
+.treeview .show{
+	display: block;
+}
+
+/********************************************************
+ *		  Datediv 自定义日期表格 winys@2015/6/4           *
+ ********************************************************/
+.Datediv .date_month{
+	text-align: center;
+	font-weight: 600;
+	font-size: 16px;
+}
+.Datediv .left, .Datediv .left{
+	cursor: pointer;
+}
+.Datediv .date_days{
+	text-align: center;
+}
+.Datediv .daydiv{
+	text-align: center;
+	display: inline-block;
+	padding: 5px;
+	margin: 5px;
+	border: 1px solid #ddd;
+	cursor: pointer;
+	width: 29%;
+}
+.Datediv .daydiv.active{
+	box-shadow: 0 2px 8px 0 #BBB;
+}
+.Datediv sup{
+	width: 15px;
+	display: inline-block;
+}
+.Datediv .daydiv:hover{
+	box-shadow: 0 2px 8px 0 #BBB;
+}.daydiv .day_item {
+  display: inline-block;
+  padding: 5px;
+}
+/********************************************************
+ *		  Step 流程 winys@2015/6/8    			        *
+ ********************************************************/
+.step{
+	overflow: hidden;
+	width:100%;
+}
+.step_nav{
+	text-align: center;
+	background: #f2f2f2;
+	padding: 13px 0 12px;
+	border-bottom: 1px solid #eee;
+}
+.step_nav li{
+	display: inline-block;
+	width: 140px;
+	text-align: center;
+}
+.step_nav li.current {
+  color: #386d39;
+}
+.step_nav li span{
+	position: relative;
+	display: block;
+	margin: 3px auto;
+	padding: 5px 10px;
+	width: 34px;
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	border-radius: 25px;
+	background: #777;
+	border: 4px solid #e2e2e2;
+	color: #fff;
+}
+.step_nav li.current span {
+	background: #468847;
+	color: #fff;
+}
+.step_nav li span hr {
+	position: absolute;
+	top: 9px;
+	left: 28px;
+	width: 120px;
+	height: 8px;
+	background: #e2e2e2;
+	border: 0 none;
+}
+.step_item{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/********************************************************
+ *		  Optionbtn 流程 winys@2015/6/8    			    *
+ ********************************************************/
+
+.optionbtn li{ 	
+	padding: 20px 0;
+	background: #fff;
+	color: #1f90c8;
+	border: 1px solid #cfeaf8;
+	font-size: 16px;
+	margin: 0 4px;
+	cursor: pointer;
+	text-align: center;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	overflow: hidden;
+}
+.optionbtn .inline{
+	display: inline-block;
+}
+.optionbtn .selected {
+  border: 1px solid #1c82b4;
+  background: #1f90c8;
+  color: #fff;
+}

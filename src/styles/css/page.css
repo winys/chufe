@@ -1,0 +1,1026 @@
+#load_page{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	background: #F1F4F6;
+	z-index: 999;
+	border: 1px solid #ddd;
+	z-index: 1001;
+}
+.successmessage{
+	color:green;
+}
+.errormessage{
+	color:red;
+}
+.page{
+	height: 100%;
+	width: 100%;
+	background-color: #F1F4F6;
+}
+.content{
+	padding: 0 20px;
+	overflow: auto;
+	max-height: 80%;
+	padding-bottom: 10px;
+}
+
+.panel{
+	padding: 10px 20px;
+	background: #FFF;
+}
+.chu_load{
+	padding-top:300px; 
+}
+
+.chu_menu{
+	width: 210px;
+	display: inline-block;
+	height: 100%;
+	background-color: #22222C;
+	float: left;
+	position: relative;
+	z-index: 90;
+}
+.chu_menu .logo{
+	height: 48px;
+	background-color: #FFF;
+}
+
+
+.chu_menu .logo_name{
+	display: inline-block;
+	height: 48px;
+	line-height: 48px;
+	vertical-align: top;
+	font-size: 18px;
+	font-family: "黑体";
+	vertical-align: middle;
+	margin-left: 16px;
+}
+.chu_operation{
+	height: 100%;
+	margin-left: 200px;
+}
+.chu_operation.folder{
+	margin-left: 50px;
+	width: auto;
+}
+/* 定制的dropdown样式 */
+.wh_dropdown{
+	width: 150px;
+	height: 30px;
+}
+.wh_dropdown .dropdown_text{	
+	background-color: #ECE6CB;
+}
+.wh_dropdown .dropdown_text:after{
+	border-color: #3b3f4e transparent transparent;
+}
+.wh_dropdown .toggle:focus ~ .dropdown_text:after{
+	border-color: transparent transparent #3b3f4e;
+}
+.wh_dropdown .dropdown_items {
+	background-color: #ECE6CB;	
+}
+.wh_dropdown .dropdown_items li{
+	padding: 0 5px;
+	color: #aaa;
+	font-size: 12px;
+}
+.wh_dropdown .dropdown_items li:hover{
+	cursor: pointer;
+	color: #000;
+}
+.wh_dropdown .dropdown_items li span{
+	padding-left: 8px;
+}
+
+.popbox .timetree{
+	position: fixed;
+	right: 0;
+	top: 49px;
+	z-index: 10;
+	width: 275px;
+	border-left: 1px solid #EEE;
+	padding: 10px 0;
+	background: #FFF;
+	height: 100%;
+	overflow-y: auto;
+}
+.tp{
+	display: block;
+	width: 200px;
+	height: 30px;
+	background-color: #ddd;
+	margin-top: 10px;
+}
+
+.breadcrumb{
+	overflow: hidden;
+  	margin: 10px 20px;
+}
+.tableTmpl{
+	clear: both;
+}
+.mark{
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	width: 15px;
+	height: 15px;
+	text-align: center;
+	background: #FF3D3D;
+	color: #FFF;
+	line-height: 15px;
+	font-size: 5px;
+	border-radius: 8px;
+}
+#warning{
+	width: 400px;
+	height: 500px;
+}
+#warning .title{
+	height: 80px;
+	line-height: 80px;
+}
+#warning .title h3{
+	display: inline-block;
+	color: red;
+	font-size: 40px;
+	font-weight: 700;
+	padding: 0 20px;
+  	vertical-align: middle;
+}
+#warning .title h1{
+	display: inline-block;
+  	vertical-align: middle;
+}
+#warning .msg{
+	display: block;	
+	height: 240px;	
+	margin: 0 20px;		
+	padding: 20px;
+	background-color: #D9EDF7;
+	font-weight: 600;
+	font-size: 14px;
+}
+.add-server{
+	min-width: 370px;
+	height: 150px;
+	border: 1px solid #ccc;
+	text-align: center;
+}
+.add-server tr{
+	height: 40px;
+}
+.add-server td{
+	padding: 0 5px;
+}
+.add-server td{
+	border: 1px solid #ccc;
+}
+.add-server select,.add-server span,.add-server input{
+	display: inline-block;
+	line-height: 35px;
+	width: 282px;
+	height: 35px;
+	border: none;
+	outline: none;
+	background: #FFF;
+	text-align: left;
+}
+.add-server option{
+	height: 30px;
+}
+.add-server .button{
+	width: 100px;
+	height: 30px;
+	border: none;
+	outline: none;
+}
+
+
+.actionbar_user{
+	padding: 10px 0;
+}
+.actionbar_user .user_item{
+	padding: 0 10px;
+	height: 30px;
+	line-height: 30px;
+	cursor: pointer;
+	margin: 0;
+}
+.actionbar_user .user_item:hover{
+	background-color: #EEE;
+}
+.department {
+	height: 99%;
+}
+.department .finfo{
+	width: 30%;
+	display: inline-block;
+	height: 100%;
+	overflow: auto;
+}
+.department .finfo .op{
+	display: block;
+	text-align: right;
+	font-size: 16px;
+	cursor: pointer;
+}
+.department .sinfo{
+	display: inline-block;
+	width: 67%;
+	margin-left: 10px;
+	vertical-align: top;
+	height: 100%;
+}
+.department .sinfo .adminform{
+	display: inline-block;
+	vertical-align: top;
+}
+.department .sinfo label{
+	cursor: pointer;
+}
+.department .sinfo .depinfo{
+	line-height: 40px
+}
+.department .sinfo .depusers{
+}
+/*.dep-left , .dep-right{
+	line-height: 40px;
+	display: inline-block;
+}
+.dep-left{
+	width: 100px;
+	text-align: right;
+}
+.dep-right{
+	width: 250px;
+	text-align: center;
+}
+.dep-right input{
+	width: 180px;
+	height: 26px;
+}
+.dep-submit{
+	margin-left: 257px;
+}
+.service_disabled{
+	cursor: no-drop;
+    color: #b8b8b8;
+    background: #ececec;
+    border-bottom-color: #d4d4d4;
+    outline:none;
+}
+.multable .operate{
+	padding-top: 10px;
+}
+
+/*删除界面样式*/
+#tmpl_Manage_operation_delete,
+#tmpl_Manage_account_service_del,
+#tmpl_Manage_account_delete,
+#tmpl_Employees_delete,
+#tmpl_Employee_roles_delete,
+#tmpl_Department_station_delmember,
+#tmpl_Department_station_delete ,
+#tmpl_Groups_delete,
+tmpl_Error,
+#tmpl_Manage_account_kinsfolk_del,
+#tmpl_Manage_account_nursed_del,
+#tmpl_Flow_definition_delete,
+#tmpl_Flow_template_delete,
+#tmpl_Information_list_delete,
+#tmpl_Information_classify_delete,
+#tmpl_Information_news_delete,
+#tmpl_Flow_incident_delete,
+#tmpl_Department_deldep,
+#tmpl_Operations_openedOperators_delete,
+#tmpl_Flow_user_del,
+#tmpl_City_delete,
+#tmpl_Resources_service_delete,
+#tmpl_Resources_service_item_delete,
+#tmpl_Resources_directory_delete,
+#tmpl_Device_list_delete,
+#tmpl_Employee_roles_delmember,
+#tmpl_Manage_organization_delete,
+#tmpl_Manage_account_emergency_delete,
+#tmpl_Manage_account_device_delete,
+#tmpl_Device_type_delete{
+	width:300px;
+	height:100px;
+}
+#tmpl_Manage_operation_delete .btn,
+#tmpl_Manage_account_service_del .btn,
+#tmpl_Manage_account_delete .btn,
+#tmpl_Employees_delete .btn,
+#tmpl_Employee_roles_delete .btn,
+#tmpl_Department_station_delmember .btn,
+#tmpl_Department_station_delete .btn,
+#tmpl_Groups_delete .btn,
+#tmpl_Error .btn,
+#tmpl_Manage_account_kinsfolk_del .btn,
+#tmpl_Manage_account_nursed_del .btn,
+#tmpl_Flow_definition_delete .btn,
+#tmpl_Flow_template_delete .btn,
+#tmpl_Information_list_delete .btn,
+#tmpl_Information_classify_delete .btn,
+#tmpl_Information_news_delete .btn,
+#tmpl_Flow_incident_delete .btn,
+#tmpl_Department_deldep .btn,
+#tmpl_Operations_openedOperators_delete .btn,
+#tmpl_Flow_user_del .btn,
+#tmpl_City_delete .btn,
+#tmpl_Resources_service_delete .btn,
+#tmpl_Resources_service_item_delete .btn,
+#tmpl_Resources_directory_delete .btn,
+#tmpl_Device_list_delete .btn,
+#tmpl_Employee_roles_delmember .btn,
+#tmpl_Manage_organization_delete .btn,
+#tmpl_Manage_account_emergency_delete .btn,
+#tmpl_Manage_account_device_delete .btn,
+#tmpl_Device_type_delete .btn{
+	float:right;
+	margin: 10px 15px 10px 0;
+}
+#tmpl_Manage_operation_delete .deltext,
+#tmpl_Manage_account_service_del .deltext,
+#tmpl_Manage_account_delete .deltext,
+#tmpl_Employees_delete .deltext,
+#tmpl_Employee_roles_delete .deltext,
+#tmpl_Department_station_delete .deltext,
+#tmpl_Department_station_delmember .deltext,
+#tmpl_Groups_delete .deltext,
+#tmpl_Error .deltext,
+#tmpl_Manage_account_kinsfolk_del .deltext,
+#tmpl_Manage_account_nursed_del .deltext,
+#tmpl_Flow_definition_delete .deltext,
+#tmpl_Flow_template_delete .deltext,
+#tmpl_Information_list_delete .deltext,
+#tmpl_Information_classify_delete .deltext,
+#tmpl_Information_news_delete .deltext,
+#tmpl_Flow_incident_delete .deltext,
+#tmpl_Department_deldep .deltext,
+#tmpl_Operations_openedOperators_delete .deltext,
+#tmpl_Flow_user_del .deltext,
+#tmpl_City_delete .deltext,
+#tmpl_Resources_service_delete .deltext,
+#tmpl_Resources_service_item_delete .deltext,
+#tmpl_Resources_directory_delete .deltext,
+#tmpl_Device_list_delete .deltext,
+#tmpl_Employee_roles_delmember .deltext,
+#tmpl_Manage_organization_delete .deltext,
+#tmpl_Manage_account_emergency_delete .deltext,
+#tmpl_Manage_account_device_delete .deltext,
+#tmpl_Device_type_delete .deltext{
+	padding: 15px;
+	font-size: 14px;
+}
+.infoDetail .title{
+	height: 50px;
+	line-height: 50px
+}
+.infoDetail .title h3{
+	display: inline-block;
+	color: #58666E;
+	font-size: 17px;
+	font-weight: 700;
+	padding: 0 20px;
+}
+.infoDetail dl{
+	padding: 0px 30px;
+	margin: 0;
+}  
+
+.infoDetail dl dt{
+	width: 90px;
+	float: left;
+	clear: left;
+	text-align: left;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}  
+
+.infoDetail dl dd, .infoDetail dl dt{
+	border-bottom: 0 none;
+	padding: 0;
+	line-height: 16px;
+	height: 30px;
+	line-height: 30px;
+}
+
+.infoDetail dl dd{
+	padding-left: 100px;
+	height: auto;
+	border-bottom: 1px solid #F3F3F3;
+}
+
+.infoDetail dl dd:last-child {
+  border-bottom: 0 none;
+}
+.infoDetail .info{	
+  display: inline-block;
+  width: 350px;
+}
+#tmpl_Search_keyword .search{
+	width: 180px;
+	height: 32px;
+	border-radius: 16px;
+	padding: 0 10px;
+	border: 1px solid #DDD;
+	outline: none;
+}
+
+#tmpl_Search_semantic .btn-primary{
+	margin-left: 40px;
+	margin-bottom: 20px;
+}
+
+
+.separator{
+ height:2px;
+ width:100%;
+ background:#57B382;
+ overflow:hidden;
+ }
+
+
+/*自然语言检索模板样式*/
+#tmpl_Search_nature input[type="text"]{
+	height:28px;
+}
+
+#tmpl_Search_nature .btn{
+	height:28px;
+	margin-bottom:3px;
+}
+
+#tmpl_Search_nature .searchResult{
+	margin-top: 15px;
+	width:90%;
+	display: none;
+}
+
+#tmpl_Search_nature .separator,#tmpl_Search_nature .panel{
+	width:90%;
+}
+
+#tmpl_Search_nature .question{
+	color:#EE2C2C;
+}
+
+#tmpl_Search_nature .answer{
+	color:#228B22;
+}
+
+
+#tmpl_Search_keyword .se_select{ 
+	
+    width: 100%;
+    background: white;
+    font-size: 15px;
+    max-height: 90%;
+    padding-right: 20px;
+    cursor: pointer;
+   /*position: absolute;*/
+    text-indent: 10px;
+    line-height: 30px;
+ 
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border-bottom: 2px solid #57B382;
+    background: #57B382;
+    color: #fff;
+
+
+  
+}
+
+#tmpl_Search_keyword .se_input{
+	width:100%;
+	height: 99%;
+	font-size: 15px;
+	 border: 2px solid #cbcad8;
+	 background: #fff;
+    height: 24px;
+    font-family: inherit;
+    font-size: 12px;
+     -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-appearance: none;
+    /*width: 600px;*/
+	}
+	#tmpl_Search_keyword option{
+		background-color: #3b3f4e;
+}
+	#tmpl_Search_keyword option:hover{
+	cursor: pointer;
+	color: #000;
+}
+
+#tmpl_Search_keyword #se_table{
+	background-color: #f2f5f6;
+	width: 100%;
+	position: left;
+	height: auto;
+    padding-left: 20px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#tmpl_Search_keyword .se_tr{
+	padding: 10px;
+	height: 30px;
+}
+
+#tmpl_Search_keyword .td1{
+	width:10%;
+	text-align: center
+}
+#tmpl_Search_keyword .td2{
+	width:20%;
+}
+#tmpl_Search_keyword .td3{
+	width:60%;
+}
+#tmpl_Search_keyword .td4{
+	width:10%;
+}
+
+
+#tmpl_Search_keyword #search {
+    background-color: #4ba575;
+    color: white;
+    font-size: 15px;
+    width: 100px;
+    height: 30px;
+    margin-left: 10px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 10px;
+}
+
+#tmpl_Search_keyword #bt1,#bt2{
+	background-color: #4ba575;
+	color: white;
+	font-size: 10px;
+	padding:1px; 
+	width:20px; 
+   -moz-border-radius: 5px;      /* Gecko browsers */
+   -webkit-border-radius: 5px;   /* Webkit browsers */
+   border-radius:5px;   
+}
+
+/*部门管理*/
+#tmpl_Department_adddep .formcontent,
+#tmpl_Department_editdep .formcontent{
+	padding:20px 40px 0 15px;
+}
+#tmpl_Department_adddep .dep-submit,
+#tmpl_Department_editdep .dep-submit{
+	margin-left: 235px;
+}
+#tmpl_Department_adddep .op,
+#tmpl_Department_editdep .op{
+	padding-bottom: 10px;
+}
+/*员工*/
+#tmpl_Department_station_create .message {
+	display: inline-block;
+    width: 60px;
+    margin-right: 5px;
+    text-align: right;
+}
+
+/*员工*/
+#tmpl_Employees_create .formcontent,
+#tmpl_Employees_edit .formcontent{
+	padding:40px 80px 30px 55px; 
+}
+#tmpl_Employees_create .empage{
+	display: none;
+}
+#tmpl_Employee_roles_create .message {
+	display: inline-block;
+    width: 60px;
+    margin-right: 5px;
+    text-align: right;
+}
+
+/* 
+** --一些公用的样式-- 
+ */
+ .search{
+	width: 180px;
+	height: 32px;
+	border-radius: 16px;
+	padding: 0 10px;
+	border: 1px solid #DDD;
+	outline: none;
+}
+/* ********
+** 角色管理，资源管理 
+**包括：角色新增，目录管理/业务服务/套餐设置
+***********************************/
+#tmpl_Resources_directory_create .op,
+#tmpl_Employee_roles_create .op,
+#tmpl_Employee_roles_edit .op,
+#tmpl_Department_station_create.op,
+#tmpl_Department_station_edit.op,
+#tmpl_Information_news_create .op,
+#tmpl_Information_news_edit .op,
+#tmpl_Information_classify_create .op,
+#tmpl_Information_classify_edit .op,
+#tmpl_Information_list_create .op,
+#tmpl_Information_list_edit .op{
+	padding-top: 10px;
+	padding-bottom: 40px;
+    text-align: center;
+}
+#tmpl_Resources_directory_create .op a,
+#tmpl_Employee_roles_create .op a,
+#tmpl_Employee_roles_edit .op a,
+#tmpl_Department_station_create.op a,
+#tmpl_Department_station_edit.op a,
+#tmpl_Information_news_create .op a,
+#tmpl_Information_news_edit .op a,
+#tmpl_Information_classify_create .op a,
+#tmpl_Information_classify_edit .op a,
+#tmpl_Information_list_create .op a,
+#tmpl_Information_list_edit .op a{
+	margin-right: 15px;
+}
+#tmpl_Employee_roles_edit,
+#tmpl_Department_station_edit,
+#tmpl_Information_news_edit,
+#tmpl_Resources_directory_create,
+#tmpl_Information_news_create,
+#tmpl_Information_classify_create,
+#tmpl_Information_classify_edit,
+#tmpl_Information_list_create,
+#tmpl_Information_list_edit {
+	position: relative;
+	width: 400px;
+	padding-top: 30px;
+	overflow: hidden;
+	/*background-color: #f1f4f6;*/
+}
+#tmpl_Employee_roles_create dl,
+#tmpl_Employee_roles_edit ul,
+#tmpl_Department_station_edit ul,
+#tmpl_Department_station_create dl,
+#tmpl_Resources_directory_create dl,
+#tmpl_Information_news_create dl,
+#tmpl_Information_news_edit dl,
+#tmpl_Information_classify_create dl,
+#tmpl_Information_classify_edit dl,
+#tmpl_Information_list_create dl,
+#tmpl_Information_list_edit dl {	
+	width: 300px;
+	margin: 0 auto;
+	padding-top: 30px;	
+	padding-bottom: 25px;
+	font-size: 14px;
+}
+#tmpl_Employee_roles_create dl dd,
+#tmpl_Employee_roles_edit ul li,
+#tmpl_Department_station_edit ul li,
+#tmpl_Department_station_create dl dd,
+#tmpl_Resources_directory_create dl dd,
+#tmpl_Information_news_create dl dd,
+#tmpl_Information_news_edit dl dd,
+#tmpl_Information_classify_create dl dd,
+#tmpl_Information_classify_edit dl dd,
+#tmpl_Information_list_create dl dd,
+#tmpl_Information_list_edit dl dd {
+	width: 300px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+#tmpl_Employee_roles_create input.roletext,
+#tmpl_Employee_roles_edit input,
+#tmpl_Department_station_edit input,
+#tmpl_Department_station_create input.stationtext,
+#tmpl_Resources_directory_create input,
+#tmpl_Information_news_create input,
+#tmpl_Information_news_edit input,
+#tmpl_Information_classify_create input,
+#tmpl_Information_classify_edit input,
+#tmpl_Information_list_create input,
+#tmpl_Information_list_edit input {
+	width: 200px;	
+	height: 30px;
+	line-height: 30px;
+	border: 2px solid #cfeaf8;
+} 
+#tmpl_Employee_roles_create textarea,
+#tmpl_Employee_roles_edit textarea,
+#tmpl_Department_station_edit textarea,
+#tmpl_Department_station_create textarea,
+#tmpl_Resources_directory_create textarea{	
+	max-width: 200px;
+	max-height: 100px;
+	width: 200px;
+	height: 50px;
+	overflow-y: auto; 
+	vertical-align: top;
+	border: 2px solid #cfeaf8;
+	font-size: 12px;
+}
+#tmpl_Employee_roles_create select,
+#tmpl_Department_station_create select,
+#tmpl_Resources_directory_create select,
+#tmpl_Information_list_create select,
+#tmpl_Information_list_edit select {
+	width: 200px;	
+	height: 30px;
+	line-height: 30px;
+	border: 2px solid #cfeaf8;
+	color: #555;
+}
+/* 
+ * --角色管理 
+ */
+#tmpl_Employee_roles_create{
+	position: relative;
+	width: 450px;
+	height: 399px;
+	background-color: #fff;
+	overflow: auto;
+}
+#tmpl_Employee_roles_create .step{
+	overflow: hidden;
+}
+#tmpl_Employee_roles_create .step .step_nav {
+    background: #f2f2f2;
+    padding: 15px 0 13px;
+    border-bottom: 1px solid #eee;
+}
+#tmpl_Employee_roles_create .steps{
+	/*width: 200%;
+	height: 100%;
+	margin-left: 30px;*/
+}
+#tmpl_Employee_roles_create .steps .pervstep{
+	float: left;
+}
+#tmpl_Employee_roles_create .step_content {
+	height: 250px;	
+	position: relative; 
+    padding: 20px; 
+    overflow: auto;    
+}
+#tmpl_Employee_roles_create .step_footer{	
+	border-top: 1px solid #eee;
+    background: #f2f2f2;
+    padding: 15px 30px;
+    overflow: hidden;
+}
+#tmpl_Employee_roles_create .nextstep,
+#tmpl_Employee_roles_create .submit{
+	float: right;
+}
+#tmpl_Employee_roles_create .pervstep{
+	float: left;
+}
+#source{
+	padding-top: 10px;
+	padding-bottom: 25px;
+}
+#source ul{
+	font-size: 14px;	
+}
+#source ul li{
+	display: inline-block;
+	padding-top: 15px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+	padding-left: 8px;
+}
+#source .sourcename{
+	width: 15%;
+	/*padding-left: 5px;*/
+	font-weight: bold;
+	font-size: 14px;
+	border-right: 1px dotted #ccc;
+}
+#source .sourcelist{
+	width: 80%;
+}
+#tmpl_Employee_roles_addmember,
+#tmpl_Employee_roles_secondmenulist{
+	width: 650px;
+	height: 400px;
+	padding: 10px;
+	overflow: auto;
+}
+#tmpl_Employee_roles_addmember form,
+#tmpl_Employee_roles_secondmenulist form{
+	display: inline;
+}
+/* 部门管理 */
+#tmpl_Department_adduser {
+	width: 650px;
+    height: 300px;
+    overflow: scroll;
+    padding: 10px;    
+}
+#tmpl_Department_adduser form {
+    display: inline-block;
+    vertical-align: top;
+}
+/*密码管理*/
+#tmpl_Pwd_overview .item,
+#tmpl_Pwd_firstlogin .item {
+    font-size: 12px;
+}
+#tmpl_Pwd_overview input,
+#tmpl_Pwd_firstlogin input {
+	width: 180px;
+}
+#tmpl_Pwd_overview .mdupw,
+#tmpl_Pwd_overview .mdexistupw,
+#tmpl_Pwd_firstlogin .mdupw{
+	display: none;
+}
+#tmpl_Pwd_firstlogin .prompt {
+	width: 150px;
+	font-size: 14px;
+	position: relative;
+    top: -14px;
+}
+
+/* 数据录入 */
+#tmpl_Collect_insert .step_content {
+	background:#FFF;
+	font-size: 15px;
+    line-height: 35px;
+}
+#tmpl_Collect_insert .step_nav ,#tmpl_Collect_insert .step_content{
+	width:50%;
+}
+#tmpl_Collect_insert .step_nav .step span{
+    background: #468847;
+    color: #fff;
+}
+#tmpl_Collect_insert .step_nav li {
+	color: #386d39;
+}
+#tmpl_Collect_insert .step_nav .step {
+	overflow: inherit;
+}
+
+
+/*
+部门信息样式设置
+ */
+.panel_left {
+	padding: 10px 20px;
+	width: 30%; 
+	float:left;
+	height: auto;
+	 margin:0;
+	background: #fff;
+}
+.panel_right {
+	/*padding: 10px 20px;*/
+	float: right;
+	width:70%;
+	height: auto;
+	 margin:0;
+	background: #fff;
+}
+
+.dep_info{
+	padding-top: 10px;
+    padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom:5px;
+}
+
+.span_info{
+ 	float: left;
+	padding: 10px 20px;
+}
+.span_operate{
+	float: right;
+	/*padding: 10px 20px;*/
+}
+
+.tool_info{
+	/*position: fixed;*/
+    padding-top: 37px;
+    padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom:5px;
+    background-color: white;
+    /*z-index: 1;*/
+}
+.tool_operate{
+ float: left;
+ padding: 10px 20px;
+}
+.pagination{
+ float: right;
+ /*padding: 10px 20px;*/
+}
+
+.table_info{
+  /*margin :5px 10px;*/
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+/* 
+ * --岗位管理 
+ */
+#tmpl_Department_station_create{
+	position: relative;
+	width: 450px;
+	height: 399px;
+	background-color: #fff;
+	overflow: auto;
+}
+#tmpl_Department_station_create .step{
+	overflow: hidden;
+}
+#tmpl_Department_station_create .step .step_nav {
+    background: #f2f2f2;
+    padding: 15px 0 13px;
+    border-bottom: 1px solid #eee;
+}
+#tmpl_Department_station_create .steps{
+	/*width: 200%;
+	height: 100%;
+	margin-left: 30px;*/
+}
+#tmpl_Department_station_create .steps .pervstep{
+	float: left;
+}
+#tmpl_Department_station_create .step_content {
+	height: 250px;	
+	position: relative; 
+    padding: 20px; 
+    overflow: auto;    
+}
+#tmpl_Department_station_create .step_footer{	
+	border-top: 1px solid #eee;
+    background: #f2f2f2;
+    padding: 15px 30px;
+    overflow: hidden;
+}
+#tmpl_Department_station_create .nextstep,
+#tmpl_Department_station_create .submit{
+	float: right;
+}
+#tmpl_Department_station_create .pervstep{
+	float: left;
+}
+#source{
+	padding-top: 10px;
+	padding-bottom: 25px;
+}
+#source ul{
+	font-size: 14px;	
+}
+#source ul li{
+	display: inline-block;
+	padding-top: 15px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+	padding-left: 8px;
+}
+#source .sourcename{
+	width: 15%;
+	/*padding-left: 5px;*/
+	font-weight: bold;
+	font-size: 14px;
+	border-right: 1px dotted #ccc;
+}
+#source .sourcelist{
+	width: 80%;
+}
+#tmpl_Department_station_addmember{
+	width: 500px;
+	height: 250px;
+	padding: 20px;
+	overflow: auto;
+}
+#tmpl_Department_station_secondmenulist{
+	width: 650px;
+	height: 400px;
+	padding: 10px;
+	overflow: auto;
+}
+#tmpl_Department_station_addmember form,
+#tmpl_Department_station_secondmenulist form{
+	display: inline;
+}

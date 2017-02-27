@@ -1,0 +1,46 @@
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            {{#if checkall}}
+            <th data-checkall class="checkbox"><input type="checkbox"></th>
+            {{/if}}
+            {{#each thead}}
+            <th>{{this}}</th>
+            {{/each}}
+            {{#if operate}}
+            <th>操作</th>
+            {{/if}}
+        </tr>
+    </thead>
+    <tbody>
+        <!--正常样式-->
+        {{#each trs}}
+        <tr id="{{rolename}}">
+            {{#if ../checkall}}
+            <td data-check  class="checkbox"><input type="checkbox" ></td>
+            {{/if}}
+            <td id="rolename">
+                <label class="role_detail" data-path="/Employee/roles/member/overview?rolename={{rolename}}" title="查看成员"><span>{{rolename}}</span></label>
+            </td>
+            <td id="roledescription">{{roledescription}}</td>
+            {{#if ../operate}}
+                <td class="operate">
+                    {{#compare_handlebars ../../operate/isadmin true}}
+                    {{#if ../../../operate/detail}}
+                    <span data-detail data-dialog data-url="Employee/roles/secondmenulist" data-tmpl="tmpl_Employee_roles_secondmenulist"><i class="fa fa-eye" title="查看/修改权限"></i></span>
+                    {{/if}}
+                    {{#if ../../../operate/delete}}
+                    <span data-delete data-dialog data-tmpl="tmpl_Employee_roles_delete"><i class="fa fa-trash" title="删除"></i></span>
+                    {{/if}}
+                    {{/compare_handlebars}}
+                    {{#compare_handlebars ../../operate/isadmin false}}
+                    {{#if ../../../operate/detail}}
+                    <span data-detail data-dialog  data-tmpl="tmpl_Error"><i class="fa fa-eye" title="查看权限"></i></span>
+                    {{/if}}
+                    {{/compare_handlebars}}
+                </td>
+            {{/if}}
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

@@ -1,0 +1,41 @@
+<div id="tmpl_Employees_edit" data-title="修改员工信息">
+	<div>
+		<form autocomplete="off">
+			<input type="hidden" name="employeeid" value="{{data.employeeid}}">
+			<div class="formcontent">
+				<div class="item">
+					<label>
+						<span class="item_name">员工名称</span>
+						<input type="text" name="username" placeholder="请输入员工名称" value="{{data.employeename}}" data-verify="!NULL AJAX" data-url="/Validator/username" data-fdata="userid={{data.employeeid}}" />
+					</label>
+				</div>
+				<div class="item">
+					<label>
+						<span class="item_name">员工电话</span>
+						<input type="text" name="employeetel" placeholder="请输入手机号" value="{{data.employeetel}}" data-verify="!NULL TELLPHONE" maxlength="11">
+					</label>
+				</div>
+				<div class="item">
+					<label>
+						<span class="item_name">员工邮箱</span>
+						<input type="text" name="employeeemail" placeholder="请输入员工邮箱" value="{{data.employeeemail}}" data-verify="EMAIL">
+					</label>
+				</div>
+				<div class="item">
+					<label>
+						<span class="item_name">角色</span>
+						<select name="roleid">
+							{{#each data.rolelist}}
+							<option value="{{@key}}" {{#compare_handlebars check "true"}}selected{{/compare_handlebars}}>{{this.id}}</option>
+							{{/each}}
+						</select>
+					</label>
+				</div>
+			</div>
+			<div class="op">
+				<a class="btn" data-conceal data-submit="/Employee/employees/edit">确定</a>
+				<a class="btn" data-conceal>取消</a>
+			</div>
+		</form>
+	</div>
+</div>

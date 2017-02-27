@@ -1,0 +1,184 @@
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta name="Keywords" content="chu,cloud" />
+	<meta name="Description" content="楚云数渊科技有限公司" />
+	<meta name="author" content="chucloud" />
+	<meta name="robots" content="all" />
+	<meta name="generator" content="bootstrap,fontawesome,jquery" />
+
+	<title>楚云数渊科技有限公司</title>
+
+	<link rel = "Shortcut Icon" href="../imgs/chucloud.ico">
+	<link rel="stylesheet" type="text/css" href="../css/commen.css">
+	<link rel="stylesheet" type="text/css" href="../css/chucloud.css">
+	<link rel="stylesheet" type="text/css" href="../css/page.css">
+	<script type="text/javascript" src="../javascript/jQuery.js"></script>
+	<script type="text/javascript" src="../javascript/config.js"></script> 
+	<script type="text/javascript" src="../javascript/chucloud.js"></script> 
+	<script type="text/javascript" src="../javascript/jquery.color.js"></script> 
+
+    <script type="text/javascript">
+        $(function(){        
+            $('#getRow').click(function(){
+                var  arr = $('.table').table().getRow(1); //获取第二行的全部数据
+                alert("第二行数据：\n"+arr);
+            });
+
+            $('#getCol').click(function(){
+                var  arr = $('.table').table().getCol(1); //获取第二列的全部数据
+                alert("第二列数据：\n"+arr);
+            });
+
+            //数据添加一行
+            $('#newRow').click(function(){
+                var insertData = {checkbox:"true",data:["arch201310x64a","Arch Linux 2013.10 64bit","可用","20","linux"]};
+               $('.table').table().newRow(insertData,function(){
+                    alert("进行数据库数据添加工作。");
+               });
+            });
+
+            //数据删除一行，根据id
+            $('#delRow').click(function(){
+                var id = '11'; //根据id删除
+               $('.table').table().delRow(id,function(){
+                    alert("进行数据库数据删除工作。");
+               });
+            });
+
+             //使某行保持可选，根据id
+            $('#setRowSelected').click(function(){
+                var id = '11'; //根据id删除
+               $('.table').table().setRowStyle(id,"selected");
+               //$('.table').table().setRowStyle(id,"selected22");
+               //$('.table').table().setRowStyle(id,"forbidden");
+               //$('.table').table().setRowStyle(id,"normal");
+
+            });
+
+           
+        });
+    </script>
+	
+</head>
+
+
+<body>
+<div class="page">
+	<table class="table table-bordered table-hover"  data-table  style="width:600px;">
+    <thead>
+        <tr>
+         <th data-checkall class="checkbox"><input type="checkbox"></th>
+            <th>ID</th>
+            <th width="30%">名称</th>
+            <th>状态</th>
+            <th width="20%">容量 (G)</th>
+            <th>平台</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!--正常样式-->
+        <tr id="11">
+        <td data-table data-check  class="checkbox"><input type="checkbox" ></td>
+            <td><a href="#" >arch201310x64a</a></td>
+            <td>Arch Linux 2013.10 64bit</td>
+            <td >可用</td>
+            <td>20</td>
+            <td>linux</td>
+        </tr>
+
+        <tr id="12">
+        <td data-table data-check class="checkbox"><input type="checkbox" ></td>
+            <td><a href="#" >arch201310x64a</a></td>
+            <td>Arch Linux 2013.10 64bit</td>
+            <td >可用</td>
+            <td>20</td>
+            <td>linux</td>
+        </tr>
+
+        <tr id="13">
+        <td data-table data-check  class="checkbox"><input type="checkbox" ></td>
+            <td><a href="#" >arch201310x64a</a>
+            </td>
+            <td>Arch Linux 2013.10 64bit</td>
+            <td >可用</td>
+            <td>20</td>
+            <td>linux</td>
+        </tr>
+
+        <!--选择行样式-->
+        <tr class='selected'>
+        <td data-table data-check  class="checkbox"><input type="checkbox" ></td>
+            <td><a href="#" >arch201310x64a</a>
+            </td>
+            <td>Arch Linux 2013.10 64bit</td>
+            <td >可用</td>
+            <td>20</td>
+            <td>linux</td>
+        </tr>
+
+        <!--禁止选择行样式-->
+        <tr class='forbidden'>
+        <td data-table data-check class="checkbox" ><input type="checkbox" ></td>
+            <td><a href="#" >arch201310x64a</a>
+            </td>
+            <td>Arch Linux 2013.10 64bit</td>
+            <td >可用</td>
+            <td>20</td>
+            <td>linux</td>
+        </tr>     
+    </tbody>
+    </table>
+
+
+
+    <!--获取表格行数据-->
+    <button id="getRow">获取行数据</button>
+    <!--获取表格列数据-->
+    <button id="getCol">获取列数据</button>
+    <!--添加一行表格数据-->
+    <button id="newRow">添加一行数据</button>
+    <!--删除一行表格数据-->
+    <button id="delRow">删除一行数据</button>
+    <!--使某行保持可选-->
+    <button id="setRowSelected">使某行保持可选</button>
+
+</div>
+</body>
+</html>
+
+<!--
+**********************
+主要data-api 说明：
+**********************
+data-table ：应用于table标签 ，存储table标签信息
+
+data-checkall: 应用于表格头部 th，代表复选框全选标签
+
+data-check: 应用于表格tbody内的td,代表该行的是否可选
+
+**********************
+主要class样式 说明：
+**********************
+selected :应用于tr, 表示改行是否选中
+
+forbidden :应用于tr, 表示改行是否禁用
+
+checkbox :应用于td, 调整td内checkbox的位置居中
+
+
+**********************
+主要方法 说明：
+**********************
+getRow(index) :获取第index行的全部数据，返回结果为一位数组
+
+getCol(index) : 获取第index列的全部数据，返回结果为一位数组
+
+newRow(insertData,function(){}) : 新添加一行，链式操作，第一个参数insertData为json数组，第二个参数回调函数
+
+delRow(id,,function(){}): 删除一行，链式操作，第一个参数行数据id，第二个参数回调函数
+
+setRowStyle(id,style) :修改行数据的样式，第一个参数为行数据id,第二个参数为设置改行的样式，目前支持样式为normal,selected,forbidden
+
+
+-->

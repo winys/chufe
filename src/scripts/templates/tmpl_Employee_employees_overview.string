@@ -1,0 +1,17 @@
+ <div class="panel" data-tablekit data-url="Employee/employees/overview" id="tmpl_Manage_employees_overview">
+	<!--获取表格行数据-->
+    <div class="toolbar" data-toolbar>
+	<button class="btn" data-refresh><i class="fa fa-refresh"></i></button>
+    <button class="btn {{#compare_handlebars data.btn false}}btn-forbidden{{/compare_handlebars}}" {{#compare_handlebars data.btn false}}title="添加子部门后可用"{{/compare_handlebars}} data-add data-dialog data-url="/Manage/rolelist" data-tmpl="tmpl_Employees_create" >添加新员工</button>
+   <input type="search" class="search" placeholder="按员工名称搜索" data-setOption data-name="searchKey">
+	<div class="pagination" data-pagination>
+        <span class="per-page">每页显示：&nbsp;</span><div class="select-con"><select class="dropdown-select" name="limit"><option value="10" selected="">10</option><option value="20">20</option><option value="50">50</option><option value="100">100</option></select></div>
+        <div class="pages" data-pages>
+            页数2/2
+        </div>
+        <a class="btn"  data-action="prev" ><i class="fa fa-chevron-left"></i></a>
+        <a class="btn"  data-action="next" ><i class="fa fa-chevron-right"></i></a>
+    </div>
+    </div>
+    <div id="employeestable" data-table></div>
+</div>

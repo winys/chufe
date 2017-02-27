@@ -1,0 +1,41 @@
+<table class="table table-bordered table-hover"  data-table >
+	    <thead>
+	        <tr>
+	        	{{#if checkall}}
+	         	<th data-checkall class="checkbox"><input type="checkbox"></th>
+	         	{{/if}}
+	        	{{#each thead}}
+	        	<th>{{this}}</th>
+	        	{{/each}}
+	        	{{#if operate}}
+	         	<th>操作</th>
+	         	{{/if}}
+	        </tr>
+	    </thead>
+	    <tbody>
+	        <!--正常样式-->
+	        {{#each trs}}
+	        <tr id="{{@key}}">
+	        	{{#if checkall}}
+	        	<td data-check  class="checkbox"><input type="checkbox" ></td>
+	        	{{/if}}
+	        	{{#each this}}
+	            <td>{{this}}</td>
+	            {{/each}}
+	            {{#if ../operate}}
+	        	<td class="operate">
+		        	{{#if ../../operate/detail}}
+		        	<span data-detail data-dialog data-tmpl="tmpl_{{controller}}_detail" data-nopath="/{{controller}}/detail"><i class="fa fa-eye"title="查看"></i></span>
+		        	{{/if}}
+		        	{{#if ../../operate/edit}}
+		        	<span data-edit data-dialog data-tmpl="tmpl_{{controller}}_edit"  data-nopath="/{{controller}}/edit"><i class="fa fa-pencil-square-o" title="编辑"></i></span>
+		        	{{/if}}
+		        	{{#if ../../operate/delete}}
+		        	<span data-delete data-dialog data-tmpl="tmpl_{{controller}}_delete"><i class="fa fa-trash" title="删除"></i></span>
+		        	{{/if}}
+	        	</td>
+	        	{{/if}}
+	        </tr>
+	        {{/each}}
+	    </tbody>
+	    </table>

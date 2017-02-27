@@ -1,0 +1,46 @@
+<div id="tmpl_Employees_create" data-title="添加新员工">
+	<div>
+		<form autocomplete="off">
+			<div class="formcontent">
+				<div class="item">
+					<label>
+						<span class="item_name">员工用户名</span>
+						<input type="text" data-verify="!NULL AJAX" name="username" placeholder="请输入员工用户名" data-url="/Validator/username">
+					</label>
+				</div>
+				<div class="item">
+					<label>
+						<span class="item_name">员工电话</span>
+						<input type="text" name="employeesPhone" maxLength="11" placeholder="请输入员工电话" data-verify="!NULL TELLPHONE">
+					</label>
+				</div>
+				<div class="item">
+					<label>
+						<span class="item_name">员工邮箱</span>
+						<input type="text" name="employeesEmail" placeholder="请输入员工邮箱" data-verify="EMAIL">
+					</label>
+				</div>
+				<div class="item ">
+					<label>
+						<span class="item_name">分配角色</span>
+						<select name="roleid" class="roleselect">
+							{{#each data.rolelist}}
+							<option value="{{@key}}">{{this}}</option>
+							{{/each}}
+						</select>
+					</label>
+				</div>
+				<div class="item empage">
+					<label>
+						<span class="item_name">员工工龄</span>
+						<input type="text" name="employeesAge" placeholder="请输入员工工龄" data-verify="!NULL">
+					</label>
+				</div>
+			</div>
+			<div class="op">
+				<a class="btn" data-sureconceal data-submit="/Employee/employees/add">确定</a>
+				<a class="btn" data-conceal>取消</a>
+			</div>
+		</form>
+	</div>
+</div>

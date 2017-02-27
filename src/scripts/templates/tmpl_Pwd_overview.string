@@ -1,0 +1,33 @@
+<div type="text/html" id="tmpl_Pwd_overview" data-title="修改密码">
+<form method="POST" autocomplete="off">
+	<div class="formcontent">
+		<div class="item">
+			<label>
+				<span class="item_name">原密码</span>
+				<input type="password" data-existpwd  data-verify="!NULL" autocomplete="off">
+				<input  class="mdexistupw" type="password" name="pwd">
+			</label>
+		</div>
+		<div class="item">
+			<label>
+				<span class="item_name">新密码</span>
+				<input data-newpwd type="password" data-verify="UPW" autocomplete="off">
+				<input  class="mdupw" type="password" name="newpwd">
+				<span class="message" id="pwderror">请输入8-32个字符，不能是纯字母或纯数字，不能含空格</span>
+			</label>
+		</div>
+		<div class="item">
+			<label>
+				<span class="item_name">确认新密码</span>
+				<input data-surepwd type="password"  data-verify="UPW" autocomplete="off">
+				<input  class="mdupw" type="password" name="surenewpwd">
+				<span class="message" id="hint"></span>
+			</label>
+		</div>
+	</div>
+	<div class="op">
+		<a class="btn btn-forbidden" data-conceal data-submit="/Info/changepwd">确定</a>
+		<a class="btn" data-conceal>取消</a>
+	</div>
+</form>
+</div>

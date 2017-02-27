@@ -1,0 +1,27 @@
+<table id="tmpl_Groups_adduser_table"  class="table table-bordered table-hover" >
+    <thead>
+        <tr>
+            {{#if checkall}}
+            <th data-checkall class="checkbox"><input type="checkbox"></th>
+            {{/if}}
+            {{#each thead}}
+            <th>{{this}}</th>
+            {{/each}}
+            {{#if operate}}
+            <th>操作</th>
+            {{/if}}
+        </tr>
+    </thead>
+    <tbody>
+        <!--正常样式-->
+        {{#each trs}}
+        <tr id="{{@key}}">
+            {{#if ../checkall}}
+            <td data-check  class="checkbox"><input type="checkbox" {{check}} ></td>
+            {{/if}}
+            <td id="menuname">{{menuname}}</td>
+            <td id="menunum">{{menunum}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

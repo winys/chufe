@@ -1,0 +1,11 @@
+<div id="tmpl_Employee_roles_secondmenulist" data-title="应用设置">
+    <div data-tablekit data-url="Employee/roles/secondmenulist">
+        <div data-toolbar>
+        <form autocomplete="off">
+            <input type="hidden" name="role_id" value="{{id}}">
+            <a class="btn" data-conceal data-submit="/Employee/roles/saveapply" data-name="ids" data-group>保存</a>
+        </form>
+        </div>
+        <div data-table></div>
+    </div>
+</div>

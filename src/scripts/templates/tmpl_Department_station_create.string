@@ -1,0 +1,70 @@
+<div id="tmpl_Department_station_create" data-title="添加岗位">
+	<div data-step class="step">
+		<ol class="step_nav">
+			<li class="step1 current">
+				填写岗位信息
+				<span><hr>1</span>
+			</li>
+			<li class="step2">
+				分配权限
+				<span>2</span>
+			</li>
+		</ol>
+		<div class="steps">
+			<form autocomplete="off">
+				<div class="step_item">
+					<div class="step_content">
+						<dl>
+							<dd>
+								<label>
+									<input type="hidden" name="level" value="{{level}}">
+									<span class="message">岗位名称</span>
+									<input class="stationtext" data-verify="!NULL AJAX WORD" data-url="Manage/staname?level={{level}}&staname={{../staname}}"  type="text" name="staname" placeholder="请输入岗位名称"></input>
+								</label>
+
+							</dd>
+							<dd>
+								<label><span class="message">描述</span>
+								<textarea name="remark" data-verify="!NULL" placeholder="请输入岗位描述"></textarea></label>
+							</dd>
+						</dl>
+					</div>
+					
+					<div class="step_footer">
+						<a class="btn nextstep" data-next>下一步</a>
+					</div>
+				</div><div class="step_item">
+					<div class="step_content">						
+						<div id="source" data-table data-choice name="allsource">
+	                        <table>
+	                            <tbody>
+	                                <tr>
+	                                    <td class="sourcename"><span>资源名称</span></td> 
+	                                    <td class="sourcelist">
+	                                    	{{#if data.trs}}
+	                                    	<ul>
+	                                    		{{#each data.trs}}
+	                                    		<li>
+	                                    			<input type="checkbox" data-name="{{id}}" value="{{id}}" />
+	                                    			
+	                                    			<span>{{name}}</span>
+	                                    		</li>
+												{{/each}}
+	                                    	</ul>
+	                                    	{{/if}}                                    	
+	                                    </td>	                                    
+	                                </tr>
+	                            </tbody>
+	                        </table>                        
+                    	</div>
+					</div>
+					<div class="step_footer">
+						<a class="btn pervstep" data-prev>上一步</a>
+						<a class="btn submit" data-conceal  data-submit="/Department/station/add?level={{level}}">确定</a>
+					</div>
+				</div>	
+		</form>
+		</div>
+		
+	</div>
+</div>

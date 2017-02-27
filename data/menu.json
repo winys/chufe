@@ -1,0 +1,71 @@
+{
+    "Employee": {
+        "id": "6",
+        "name": "员工管理",
+        "url": "Employee/overview",
+        "icon_class": "fa-user",
+        "key_name": "Employee",
+        "pid": "0",
+        "text": "员工管理",
+        "children": {
+            "employees": {
+                "id": "7",
+                "name": "员工列表",
+                "url": "Employee/employees",
+                "icon_class": "",
+                "key_name": "employees",
+                "pid": "6",
+                "text": "员工列表"
+            },
+            "roles": {
+                "id": "29",
+                "name": "角色管理",
+                "url": "Employee/roles",
+                "icon_class": null,
+                "key_name": "roles",
+                "pid": "6",
+                "text": "角色管理"
+            }
+        }
+    },
+    "Department": {
+        "id": "30",
+        "name": "部门管理",
+        "url": "Department/overview",
+        "icon_class": "fa-sitemap",
+        "key_name": "Department",
+        "pid": "0",
+        "text": "部门管理",
+        "children": {
+            "departments": {
+                "id": "31",
+                "name": "部门列表",
+                "url": "Department/departments",
+                "icon_class": null,
+                "key_name": "departments",
+                "pid": "30",
+                "text": "部门列表"
+            }
+        }
+    },
+    "Group": {
+        "id": "35",
+        "name": "群组管理",
+        "url": "Group/overview",
+        "icon_class": "fa-users",
+        "key_name": "Group",
+        "pid": "0",
+        "text": "群组管理",
+        "children": {
+            "groups": {
+                "id": "36",
+                "name": "群组列表",
+                "url": "Group/groups",
+                "icon_class": null,
+                "key_name": "groups",
+                "pid": "35",
+                "text": "群组列表"
+            }
+        }
+    }
+}

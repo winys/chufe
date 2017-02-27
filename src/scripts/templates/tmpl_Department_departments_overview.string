@@ -1,0 +1,11 @@
+<div class="department">
+<div class="panel_left"  data-url="Department/departments/overview" id="tmpl_Manage_departments_overview" >
+        <div class="op">
+         <button class="btn" data-dialog data-tmpl="tmpl_Department_adddep"><i class="fa fa-plus"></i>添加部门</button>&nbsp;|&nbsp; 
+        <button class="btn" data-refresh ><i class="fa fa-refresh"></i></button>
+        </div>
+        <div  class="dropdown" data-treeview data-nopathform="Department/departments/detail?level=@level" data-target="#departmentstable">
+        </div> 
+    </div>
+<div class="panel_right"  id="departmentstable"></div>
+</div>

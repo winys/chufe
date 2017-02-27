@@ -1,0 +1,30 @@
+<div type="text/html" id="tmpl_Pwd_firstlogin" data-title="设置新密码">
+<form method="POST" autocomplete="off">
+	<div class="formcontent">
+		<div class="item">
+			<label>
+				<span class="item_name prompt">初次登录请设置新密码</span>
+			</label>
+		</div>
+		<div class="item">
+			<label>
+				<span class="item_name">新密码</span>
+				<input data-newpwd type="password" data-verify="UPW" autocomplete="off">
+				<input  class="mdupw" type="password" name="newpwd">
+				<span class="message" id="pwderror">请输入8-32个字符，不能是纯字母或纯数字，不能含空格</span>
+			</label>
+		</div>
+		<div class="item">
+			<label>
+				<span class="item_name">确认新密码</span>
+				<input data-surepwd type="password"  data-verify="UPW" autocomplete="off">
+				<input  class="mdupw" type="password" name="surenewpwd">
+				<span class="message" id="hint"></span>
+			</label>
+		</div>
+	</div>
+	<div class="op">
+		<a class="btn btn-forbidden" data-conceal data-submit="/Info/changepwd">确定</a>
+	</div>
+</form>
+</div>

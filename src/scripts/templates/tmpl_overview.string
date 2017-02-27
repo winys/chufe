@@ -1,0 +1,39 @@
+<div>
+    
+    <div class="dropdown def_dropdown" data-dropdown>
+       <div class="dropdown_text"><span class="text">下拉框</span></div>
+       <ul class="dropdown_items">
+           <li><a href="http://www.baidu.com">新建任务1</a></li>
+           <li>新建任务2</li>
+           <li>新建任务3</li>
+           <li>新建任务4</li>
+       </ul>
+   </div>
+   <div class="dropdown wh_dropdown" data-dropdown>
+       <div class="dropdown_text"><span class="text">下拉框</span></div>
+       <ul class="dropdown_items">
+           <li><a href="http://www.baidu.com">新建任务1</a></li>
+           <li>新建任务2</li>
+           <li>新建任务3</li>
+           <li>新建任务4</li>
+       </ul>
+   </div>
+   <input id="ex5" type="text" data-seekbar data-min="-5" data-max="20" data-step="1" data-value="0"/>
+</div>
+<div class="tp" data-tooltip data-title="上边" data-placement="top" style="width:100px;"><span>上边</span></div>
+<div class="tp" data-tooltip data-title="下边" data-placement="bottom" style="width:100px;"><span>下边</span></div>
+<div class="tp" data-tooltip data-title="左边" data-placement="left" style="width:100px;"><span>左边</span></div>
+<div class="tp" data-tooltip data-title="右边" data-placement="right" style="width:100px;"><span>右边</span></div>
+
+
+<div class="btn" data-dialog data-tmpl="tmpl_IPManager_edit" data-tooltip data-title="这不是普通的按钮" data-placement="right"><span>按钮</span></div>
+<div class="btn" data-breadcrumb data-path="/1-1/" data-title="杰"><span>父亲breadcrumb</span></div>
+
+
+<div class="btn" data-breadcrumb data-path="/1-1/jie/"  data-tmpl="ss" data-title="杰"><span>儿子breadcrumb</span></div>
+
+<a href="/" data-path='/' data-color="gd" >广东1区</a>
+<a href="/" data-path='/' data-color="bj" >北京1区</a>
+<a href="/" data-path='/' data-color="yt" >亚太1区</a>
+
+<a href="dsadsa" data-path='/' >亚太1区</a>

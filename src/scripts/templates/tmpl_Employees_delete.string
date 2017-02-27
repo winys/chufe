@@ -1,0 +1,9 @@
+<div type="text/html" id="tmpl_Employees_delete" data-title="确认删除">
+	<div class="deltext"><h3>您确认删除该员工？</h3></div>
+	<div>
+		<form>
+			<input type="hidden" name="uid" value="{{id}}">
+			<a class="btn" data-conceal data-submit="/Employee/employees/del" >确认</a>
+		</form>
+	</div>
+</div>

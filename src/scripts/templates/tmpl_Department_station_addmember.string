@@ -1,0 +1,33 @@
+<div id="tmpl_Department_station_addmember" data-title="添加新员工" >
+	<div>
+		<form autocomplete="off">
+			<div class="formcontent">
+				<div class="item ">
+					<label>
+						<input type="hidden" name="depid" value="{{depid}}">
+						<span class="item_name">选择人员</span>
+						<select name="userid" class="userselect">
+							{{#each data.userslist}}
+							<option value="{{@key}}">{{#each this}}{{this}} {{/each}}</option>
+							{{/each}}
+						</select>
+					</label>
+				</div>
+				<div class="item ">
+					<label>
+						<span class="item_name">分配岗位</span>
+						<select name="stationid" class="stationselect">
+							{{#each data.stationlist}}
+							<option value="{{@key}}">{{this}}</option>
+							{{/each}}
+						</select>
+					</label>
+				</div>
+			</div>
+			<div class="op">
+				<a class="btn" data-sureconceal data-submit="/Department/departments/adduser">确定</a>
+				<a class="btn" data-conceal>取消</a>
+			</div>
+		</form>
+	</div>
+</div>

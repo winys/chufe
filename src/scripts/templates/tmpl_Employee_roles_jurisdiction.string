@@ -1,0 +1,24 @@
+<div id="tmpl_Employee_roles_jurisdiction" data-title="查看权限">
+    {{#data.table}}
+    <table class="table table-bordered table-hover" >
+    <thead>
+        <tr>
+            {{#each thead}}
+            <th>{{this}}</th>
+            {{/each}}
+        </tr>
+    </thead>
+    <tbody>
+        <!--正常样式-->
+        {{#each trs}}
+        {{#compare_handlebars this.check "checked"}}
+        <tr id="{{@key}}">
+            <td id="menuname">{{menuname}}</td>
+            <!-- <td id="menuurl">{{menuurl}}</td> -->
+        </tr>
+        {{/compare_handlebars}}
+        {{/each}}
+    </tbody>
+    </table>
+    {{/data.table}}
+</div>

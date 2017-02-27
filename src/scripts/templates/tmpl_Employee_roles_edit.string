@@ -1,0 +1,24 @@
+<div type="text/html" id="tmpl_Employee_roles_edit" data-title="修改角色">           
+    <form autocomplete="off">
+        {{#if data}}   
+        <ul>
+            <li>
+                <input type="hidden" name="rolename" value="{{id}}">
+                <label>角色名称&nbsp;:
+                <input type="text" name="editedrole" value="{{id}}"></label>
+            </li>            
+            {{#each data}}
+            <li>
+                <label>备注信息&nbsp;:</label>
+                <textarea name="description" value="{{label}}" placeholder="请输入...">{{label}}</textarea>
+            </li>
+            {{/each}}
+            
+        </ul>
+        {{/if}}   
+        <div class="op">
+            <a class="btn" data-conceal data-submit="/Employee/roles/save">确定</a>
+            <a class="btn" data-conceal>取消</a>
+        </div>    
+    </form>
+</div>
