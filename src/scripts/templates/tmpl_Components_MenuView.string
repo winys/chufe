@@ -1,0 +1,66 @@
+<div id="tmpl_Components_MenuView">
+    <article>
+        <header>
+            <h1>菜单显示组件</h1>
+        </header>
+        <section>
+            <p>该组件可以构造menu以及treeview两种组件，左侧菜单列表正是该组件菜单模式下面是treeview模式。</p>
+            </p>
+                菜单显示组件具有如下特点：
+                <ul>
+                    <li>菜单显示组件支持链式调用的插件。</li>
+                    <li>一级菜单可以自定义图标</li>
+                </ul>
+            </p>
+            <p>
+                菜单显示组件提供的 data-api
+                <ul>
+                    <li>data-path 点击改变hash</li>
+                </ul>
+            </p>
+            <p>
+                数据格式：
+                <pre>
+                    {
+                        "Components":{
+                            "name": "Chufe组件",
+                            "icon_class": "fa-user",
+                            "key_name": "Components",
+                            "pid":"0",
+                            "text": "Chufe组件",
+                            "children": {
+                                "MenuView":{
+                                    "name": "菜单显示组件",
+                                    "url": "Components/MenuView",
+                                    "icon_class": "",
+                                    "key_name": "MenuView",
+                                    "text": "菜单显示组件"
+                                },
+                                "Dialog":{
+                                    "name": "对话框",
+                                    "url": "Components/Dialog",
+                                    "icon_class": "",
+                                    "key_name": "Dialog",
+                                    "text": "对话框"
+                                }
+                                ......
+                            }
+                        }
+                    }
+                </pre>
+            </p>
+            <p>
+                初始化代码：
+                <pre>
+                    // @param1 构造时是否是展开模式，true 为是
+                    // @param2 菜单数据
+                    // @param3 构造类型 可用值 ["menu","treeview"]
+                    // @param4 初始active的条目
+                    $(".chu_menu").menuView(true,data[0],"menu");
+                </pre>
+                各参数默认值见 config.js > MenuView
+            </p>
+
+        </section>
+    </article>
+</div>

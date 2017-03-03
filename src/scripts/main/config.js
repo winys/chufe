@@ -34,7 +34,7 @@ $.CONFIG = {
 	//MenuView 默认配置
 	MenuView : {
 		open : true,
-		index: "/KB/overview/",
+		index: "/Components/MenuView/",
 		type: "menu",
 		seccolor:"",
 		maincolor:""
@@ -144,94 +144,34 @@ $.CONFIG = {
 	},
 	UrlMap :{
 		overview:"",
+		Components: {
+			MenuView:"",
+			Dialog:"",
+			Actionbar:"",
+			Popbox:"",
+			Timetree:"",
+			Loadbar:"",
+			Dropdown:"",
+			Tooltip:"",
+			Tab:"",
+			BreadCrumb:"",
+			Table:"",
+			Pagination:"",
+			Toast:"",
+			Seekbar:"",
+			Datediv:"/datediv.json",
+			Step:"",
+			Optionbtn:"",
+			Tablekit:"/employee.json",
+			Cascade:"",
+			Cascadebtn:""
+		},
 		Index:{	
 			menu:"/menu.json",
 			User:"/get_user_detail.json",
 			logout:"/UC/user_controller/logout",
 			log:"/log.json"
-		},
-		Employee:{
-			employees:{
-				overview:"/employee.json",
-				add:"/UC/employee_controller/add",
-				detail:"/UC/employee_controller/get_detail",
-				edit:"/UC/employee_controller/update",
-				del:"/UC/employee_controller/delete",
-			},
-			roles:{
-				overview:"/role.json",
-				availbleMenu:"/UC/menu_controller/available_menu",
-				add:"/UC/role_controller/add",
-				del:"/UC/role_controller/delete",
-				edit :"/UC/role_controller/edit",
-				save:"/UC/role_controller/edit",
-				secondmenulist:"/UC/menu_controller/second_list",
-				jurisdictionlist:"/chucloud/api/manage/jurisdictionlist.php",
-				saveapply:"/UC/role_controller/edit",
-				member:{
-					overview:"/chucloud/api/manage/role_member.php",
-					list:"/chucloud/api/manage/norole_of_member.php",
-					del :"/chucloud/api/manage/delmember.php",
-					add:"/chucloud/api/manage/addmember.php",
-				}
-			}
-		},
-		Manage:{
-			overview:"",			
-			rolename:"/UC/role_controller/is_role_name_available",
-			staname:"/UC/station_controller/is_station_name_available",
-			departments:"/UC/department_controller/department_list",
-			rolelist:"/UC/role_controller/get_role_list",
-			stationlist:"/UC/station_controller/get_station_list",
-			groups:"/UC/group_controller/group_list",
-			groname:"/UC/group_controller/is_group_name_available",
-
-			
-		},	
-		Group:{
-			groups:{
-			overview : "/group.json",
-			detail : "/UC/group_controller/get_detail",
-			addgro : "/UC/group_controller/add_gro",
-			editgro : "/UC/group_controller/edit",
-			delgro : "/UC/group_controller/delete",
-			saveapply:"/UC/group_controller/edituser",
-			
-			userlist : "/UC/group_controller/userlist",
-			availbleName:"/UC/menu_controller/is_available_group_name"
-			}
-		},
-		Department : {
-			departments:{
-			overview : "/department.json",
-			detail : "/departmentusers.json",
-			adddep : "/UC/department_controller/add_dep",
-			editdep : "/UC/department_controller/edit",
-			deldep : "/UC/department_controller/delete",
-			adduser : "/UC/department_controller/adduser",
-			deluser : "/UC/department_controller/deluser",
-			userlist : "/departmentusers.json",
-			//availbleuser:"/UC/department_controller/nosta_of_user"
-			},
-			station:{
-				overview:"/UC/station_controller/get_list",
-				secondmenulist:"/UC/menu_controller/second_station_list",
-				saveapply:"/UC/station_controller/edit",
-				add:"/UC/station_controller/add",
-				del:"/UC/station_controller/delete",
-				edit :"/UC/station_controller/edit",
-				save:"/UC/station_controller/edit",
-				availbleMenu:"/UC/menu_controller/available_station_menu",
-				stationdetail:"/UC/station_controller/get_userstation_list",
-				editmember:"/UC/station_controller/editmember",
-			}
-		},
-		Info:{
-			changepwd:"/UC/user_controller/change_password"
-		},
-		Validator:{
-			username:"/UC/user_controller/is_username_available"
-		}
+		}		
 	}
 };
 

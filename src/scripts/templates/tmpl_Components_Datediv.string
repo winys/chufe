@@ -1,0 +1,22 @@
+<div id="tmpl_Components_Datediv">
+    <article>
+        <header>
+            <h1>自定义日期表格</h1>
+        </header>
+        <section>
+            <p>下面是他的样例。</p>
+            <div class="panel">
+                <div data-datediv data-url="Components/Datediv"></div>
+            </div>
+            <pre>
+            作用：选择日期，父类型为table 用于选择月份以及选择其中的一天。
+            触发data-api
+            data-datediv ：触发初始化
+            data-url：数据定位字符串
+            组件内部data-api
+            data-next ： 下一个月
+            data-prev ： 上一个月
+            </pre>
+        </section>
+    </article>
+</div>

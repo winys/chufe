@@ -1,4 +1,153 @@
 {
+    "Components":{
+        "name": "Chufe组件",
+        "icon_class": "fa-user",
+        "key_name": "Components",
+        "pid":"0",
+        "text": "Chufe组件",
+        "children": {
+            "MenuView":{
+                "name": "菜单显示组件",
+                "url": "Components/MenuView",
+                "icon_class": "",
+                "key_name": "MenuView",
+                "text": "菜单显示组件"
+            },
+            "Dialog":{
+                "name": "对话框",
+                "url": "Components/Dialog",
+                "icon_class": "",
+                "key_name": "Dialog",
+                "text": "对话框"
+            },
+            "Actionbar":{
+                "name": "行为栏",
+                "url": "Components/Actionbar",
+                "icon_class": "",
+                "key_name": "Actionbar",
+                "text": "行为栏"
+            },
+            "Popbox":{
+                "name": "弹出菜单",
+                "url": "Components/Popbox",
+                "icon_class": "",
+                "key_name": "Popbox",
+                "text": "弹出菜单"
+            },
+            "Timetree":{
+                "name": "时间树",
+                "url": "Components/Timetree",
+                "icon_class": "",
+                "key_name": "Timetree",
+                "text": "时间树"
+            },
+            "Loadbar":{
+                "name": "加载进度条",
+                "url": "Components/Loadbar",
+                "icon_class": "",
+                "key_name": "Loadbar",
+                "text": "加载进度条"
+            },
+            "Dropdown":{
+                "name": "下拉菜单",
+                "url": "Components/Dropdown",
+                "icon_class": "",
+                "key_name": "Dropdown",
+                "text": "下拉菜单"
+            },
+            "Tooltip":{
+                "name": "提示文字",
+                "url": "Components/Tooltip",
+                "icon_class": "",
+                "key_name": "Tooltip",
+                "text": "提示文字"
+            },
+            "Tab":{
+                "name": "选项卡",
+                "url": "Components/Tab",
+                "icon_class": "",
+                "key_name": "Tab",
+                "text": "选项卡"
+            },
+            "BreadCrumb":{
+                "name": "面包屑",
+                "url": "Components/BreadCrumb",
+                "icon_class": "",
+                "key_name": "BreadCrumb",
+                "text": "面包屑"
+            },
+            "Table":{
+                "name": "表格",
+                "url": "Components/Table",
+                "icon_class": "",
+                "key_name": "Table",
+                "text": "表格"
+            },
+            "Pagination":{
+                "name": "分页",
+                "url": "Components/Pagination",
+                "icon_class": "",
+                "key_name": "Pagination",
+                "text": "分页"
+            },
+            "Toast":{
+                "name": "信息展示框",
+                "url": "Components/Toast",
+                "icon_class": "",
+                "key_name": "Toast",
+                "text": "信息展示框"
+            },
+            "Seekbar":{
+                "name": "滑块",
+                "url": "Components/Seekbar",
+                "icon_class": "",
+                "key_name": "Seekbar",
+                "text": "滑块"
+            },
+            "Datediv":{
+                "name": "自定义日期表格",
+                "url": "Components/Datediv",
+                "icon_class": "",
+                "key_name": "Datediv",
+                "text": "自定义日期表格"
+            },
+            "Step":{
+                "name": "流程",
+                "url": "Components/Step",
+                "icon_class": "",
+                "key_name": "Step",
+                "text": "流程"
+            },
+            "Optionbtn":{
+                "name": "按钮选项组",
+                "url": "Components/Optionbtn",
+                "icon_class": "",
+                "key_name": "Optionbtn",
+                "text": "按钮选项组"
+            },
+            "Tablekit":{
+                "name": "表格套件",
+                "url": "Components/Tablekit",
+                "icon_class": "",
+                "key_name": "Tablekit",
+                "text": "表格套件"
+            },
+            "Cascade":{
+                "name": "级联下拉框",
+                "url": "Components/Cascade",
+                "icon_class": "",
+                "key_name": "Cascade",
+                "text": "级联下拉框"
+            },
+            "Cascadebtn":{
+                "name": "级联按钮",
+                "url": "Components/Cascadebtn",
+                "icon_class": "",
+                "key_name": "Cascadebtn",
+                "text": "级联按钮"
+            }
+        }
+    },
     "Employee": {
         "id": "6",
         "name": "员工管理",

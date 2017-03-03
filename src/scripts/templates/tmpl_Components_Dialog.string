@@ -1,0 +1,22 @@
+<div id="tmpl_Components_Dialog">
+    <article>
+        <header>
+            <h1>对话框</h1>
+        </header>
+        <section>
+            <p>该组件可以构造对话框，下面是他的样例。</p>
+            <div class="btn" data-dialog data-tmpl="tmpl_Components_Dialog_example"><span>按钮</span></div>
+            </p>
+               
+               <pre>
+在触发元素中的data属性：
+               data-dialog点击触发
+               data-url ：如果有这个属性，回去后台取数据，没有则不取。其值为数据路径字符串(如 ‘/VM/create‘)。
+               data-tmpl：要显示的模板名称
+在dialog内部的data属性：
+               data-conceal  可关闭当前对话框 class times 有同样效果，不建议使用
+               id为模板名 data-title 的内容会被动态改写为对话框的名字</pre>
+            </p>
+        </section>
+    </article>
+</div>

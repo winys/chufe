@@ -1,0 +1,3 @@
+<div id="tmpl_Components_Dialog_example" data-title="对话框实例">
+    <a class="btn" data-conceal>关闭</a>
+</div>

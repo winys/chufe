@@ -1,0 +1,10 @@
+<div id="tmpl_Components_Timetree">
+    <article>
+        <header>
+            <h1>时间树</h1>
+        </header>
+        <section>
+            <p>请将鼠标悬浮在actionbar最后一项会弹出popbox，里面的内容为timetree。</p>
+        </section>
+    </article>
+</div>

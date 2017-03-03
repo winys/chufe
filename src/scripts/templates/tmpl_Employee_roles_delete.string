@@ -1,9 +1,0 @@
-<div type="text/html" id="tmpl_Employee_roles_delete" data-title="确认删除">
-	<div class="deltext"><h3>您确认删除该角色及其成员和所有权限？</h3></div>
-	<div>
-		<form>
-			<input type="hidden" name="rolename" value="{{id}}">
-			<a class="btn" data-conceal data-submit="/Employee/roles/del" >确认</a>
-		</form>
-	</div>
-</div>

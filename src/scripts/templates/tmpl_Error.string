@@ -1,8 +1,0 @@
-<div type="text/html" id="tmpl_Error" data-title="错误提示">
-	<div class="deltext"><h3>没有改权限</h3></div>
-	<div>
-		<form>
-			<a class="btn" data-conceal >确认</a>
-		</form>
-	</div>
-</div>

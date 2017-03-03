@@ -1,9 +1,0 @@
-<div type="text/html" id="tmpl_Department_station_delmember" data-title="确认删除">
-	<div class="deltext"><h3>您确认删除该成员及该成员在该部门的所有权限？</h3></div>
-	<div>
-		<form>
-			<input type="hidden" name="uid" value="{{id}}">
-			<a class="btn" data-conceal data-submit="Department/departments/deluser">确认</a>
-		</form>
-	</div>
-</div>

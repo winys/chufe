@@ -1,0 +1,26 @@
+<div id="tmpl_Components_Actionbar">
+    
+    <article>
+        <header>
+            <h1>提示文字</h1>
+        </header>
+        <section>
+            <p>鼠标悬浮回弹出的提示文字</p>
+            </p>
+                <div class="tp" data-tooltip data-title="上边" data-placement="top" style="width:100px;"><span>上边</span></div>
+                <div class="tp" data-tooltip data-title="下边" data-placement="bottom" style="width:100px;"><span>下边</span></div>
+                <div class="tp" data-tooltip data-title="左边" data-placement="left" style="width:100px;"><span>左边</span></div>
+                <div class="tp" data-tooltip data-title="右边" data-placement="right" style="width:100px;"><span>右边</span></div>
+            </p>
+            <p>
+            data-api
+            <pre>
+                data-tooltip ：hover触发(代码中可以控制展开与关闭)
+                data-placement ：位置，仅支持上下左右
+                data-title ： 提示的内容
+            </pre>
+            </p>
+
+        </section>
+    </article>
+</div>

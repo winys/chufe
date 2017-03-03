@@ -773,19 +773,6 @@ td.operate span{
 td.operate span:hover{
   color:#57B382;
 }
-.toolbar{
-	position:fixed;
-	margin-top: -10px;
-	padding-top:15px;
-	padding-bottom:5px;
-	margin-bottom:10px;
-	background-color:white;
-	z-index:1;
-	/*padding: 15px 20px 5px 20px;*/
-}
-.toolbar+div .table{
-	margin-top: 50px;
-}
 /*******************************************************
 *                pagination 分页  Weikai@2015/3/26       *
 ********************************************************/
@@ -1262,4 +1249,23 @@ input[type="text"]:focus{
   border: 1px solid #1c82b4;
   background: #1f90c8;
   color: #fff;
+}
+/********************************************************
+ *		  Tablekit 流程 winys@2017/3/1    			    *
+ ********************************************************/
+ [data-tablekit]{
+	position: relative;
+}
+.toolbar{
+	position:absolute;
+	margin-top: -10px;
+	padding-top:15px;
+	padding-bottom:5px;
+	margin-bottom:10px;
+	background-color:white;
+	z-index:1;
+	/*padding: 15px 20px 5px 20px;*/
+}
+.toolbar+div .table{
+	margin-top: 50px;
 }

@@ -1,0 +1,61 @@
+<div id="tmpl_Components_Step_example" data-title="步骤组件">
+    <div data-step class="step">
+        <ol class="step_nav">
+            <li class="step1 current">
+                第一步
+                <span><hr>1</span>
+            </li>
+            <li class="step2">
+                第二步
+                <span><hr>2</span>
+            </li>
+            <li class="step3">
+                第三步
+                <span>3</span>
+            </li>
+        </ol>
+        <div class="steps">
+            <form>
+                <div class="step_item">
+                    <div class="step_content">
+                        <div class="item">
+                            <label class="itemname">输入名字</label>
+                            <input name="name" type="text" data-verify="!NULL">
+                        </div>
+                    </div>
+                    <div class="step_footer">
+                        <a class="btn nextstep" data-next>下一步</a>
+                    </div>
+                </div><div class="step_item">
+                    <div class="step_content">
+                        <div class="usage-alarm"><span class="alert alert-info">提示：这是第二步</span></div>
+                        <div data-tablekit data-url="VM/overview" >
+                            <div data-table data-formitem name="rules" data-name="length">
+                                <div class="item">
+                                    <label class="itemname">再输入名字</label>
+                                    <input name="name" type="text" data-verify="!NULL">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step_footer">
+                        <a class="btn pervstep" data-prev>上一步</a>
+                        <a class="btn nextstep" data-next>下一步</a>
+                    </div>
+                </div><div class="step_item">
+                    <div class="step_content">
+                        <div data-tablekit data-url="VM/overview">
+                            <div data-table data-formitem name="actions">
+                                第三步
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step_footer">
+                        <a class="btn pervstep" data-prev>上一步</a>
+                        <a class="btn submit" data-conceal>关闭</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

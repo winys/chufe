@@ -26,7 +26,7 @@
 	 *
 	 * MenuView 内部链式调用
 	 */
-	var MenuView = function(element,open,type,data,index){
+	var MenuView = function(element,open,data,type,index){
 		//初始化属性
 		this.element = element;
 		this.menuArr = data || $.CONFIG.MenuView.menuArr;
@@ -198,13 +198,13 @@
 	};
 
 	var old = $.fn.menuView;
-	$.fn.menuView = function(open,type,menudata,index){
+	$.fn.menuView = function(open,menudata,type,index){
 		return this.each(function () {
 			var $this = $(this),
 				data = $this.data('menuView')
 				;
 			if (!data) {
-				$this.data("menuView", data =  new MenuView($this, open, type, menudata, index ).setIndex());
+				$this.data("menuView", data =  new MenuView($this, open, menudata, type, index ).setIndex());
 			}
 
 		});

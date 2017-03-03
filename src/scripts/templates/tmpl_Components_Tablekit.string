@@ -1,0 +1,48 @@
+ <div id="tmpl_Components_Actionbar"> 
+     <article>
+         <header>
+             <h1>表格套件</h1>
+         </header>
+         <section>
+             <p>表格套件是一个组合组件，由table，pagenation等组成</p>
+             <div class="panel" data-tablekit data-url="Components/Tablekit" id="tmpl_Components_Tablekit_table">
+                 <!--获取表格行数据-->
+                 <div class="toolbar" data-toolbar>
+                 <button class="btn" data-refresh><i class="fa fa-refresh"></i></button>
+                 <button class="btn {{#compare_handlebars data.btn false}}btn-forbidden{{/compare_handlebars}}" {{#compare_handlebars data.btn false}}title="添加子部门后可用"{{/compare_handlebars}} data-add data-dialog data-url="/Manage/rolelist" data-tmpl="tmpl_Employees_create" >添加新员工</button>
+                <input type="search" class="search" placeholder="按员工名称搜索" data-setOption data-name="searchKey">
+                 <div class="pagination" data-pagination>
+                     <span class="per-page">每页显示：&nbsp;</span><div class="select-con"><select class="dropdown-select" name="limit"><option value="10" selected="">10</option><option value="20">20</option><option value="50">50</option><option value="100">100</option></select></div>
+                     <div class="pages" data-pages>
+                         页数2/2
+                     </div>
+                     <a class="btn"  data-action="prev" ><i class="fa fa-chevron-left"></i></a>
+                     <a class="btn"  data-action="next" ><i class="fa fa-chevron-right"></i></a>
+                 </div>
+                 </div>
+                 <div id="employeestable" data-table></div>
+             </div>
+             <pre>
+                 表格套件包括3个组件
+                 1.toolbar（只是定义工具栏，并没有实际作用）
+                 2.Pagination （分页组件）
+                 3.Table（表格组件）
+                 data-api如下
+                 触发表格元素data-api
+                 data-tablekit ：触发初始化
+                 data-url ：后台数据定位字符串
+                 组件内部data-api
+                 data-checkall : 全选表中所有行
+                 data-group ： 获取所有行id 绑定到data-fdata上
+                 data-setoption：设置选项 并触发表格刷新
+                 data-pagination：分页初始化
+                 data-table ：表格初始化
+                 data-detail / data-edit / data-delete 会将一行tr的id设置到data-fdata(仅有id一项)中
+
+             </pre>
+             </p>
+
+         </section>
+     </article>
+ </div>
+ 

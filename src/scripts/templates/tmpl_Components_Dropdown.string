@@ -1,0 +1,35 @@
+<div id="tmpl_Components_Dropdown"style="
+    height: 500px;
+">
+    <article>
+        <header>
+            <h1>下拉菜单</h1>
+        </header>
+        <section>
+            <p>注意下拉菜单可以自定义样式 默认为def_dropdown,同时在page.css中提供了
+            wh_dropdown的样式 可模仿修改
+            示意代码。
+            示例如下：</p>
+            
+
+            <div class="dropdown def_dropdown" data-dropdown>
+                <div class="dropdown_text"><span class="text">下拉框</span></div>
+                <ul class="dropdown_items">
+                    <li><a href="http://www.baidu.com">新建任务1</a></li>
+                    <li>新建任务2</li>
+                    <li>新建任务3</li>
+                    <li>新建任务4</li>
+                </ul>
+            </div>
+            <div class="dropdown wh_dropdown" data-dropdown>
+                <div class="dropdown_text"><span class="text">下拉框</span></div>
+                <ul class="dropdown_items">
+                    <li><a href="http://www.baidu.com">新建任务1</a></li>
+                    <li>新建任务2</li>
+                    <li>新建任务3</li>
+                    <li>新建任务4</li>
+                </ul>
+            </div>
+        </section>
+    </article>
+</div>

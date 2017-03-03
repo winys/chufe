@@ -1,0 +1,32 @@
+<div id="tmpl_Components_Optionbtn"> 
+    <article>
+        <header>
+            <h1>按钮选项组</h1>
+        </header>
+        <section>
+            <p>按钮选项组 支持表单提交功能</p>
+            <div class="optionbtn" data-optionbtn data-name="cpunumber" data-display="inline">
+                <ol>
+                    <li data-value="1">
+                        选项1
+                    </li>
+                    <li data-value="2">
+                        选项2
+                    </li>
+                    <li data-value="3">
+                        选项3
+                    </li>
+                    <li data-value="4">
+                        选项4
+                    </li>
+                </ol>
+            </div>
+            <pre>
+                data-name: 表单提交的name
+                data-value：表单提交的value
+            </pre>
+            </p>
+            
+        </section>
+    </article>
+</div>

@@ -1,9 +1,0 @@
-<div type="text/html" id="tmpl_Groups_delete" data-title="确认删除">
-	<div class="deltext"><h3>您确认解散该群组？</h3></div>
-	<div>
-		<form>
-			<input type="hidden" name="uid" value="{{id}}">
-			<a class="btn" data-conceal data-submit="Group/groups/delgro" >确认</a>
-		</form>
-	</div>
-</div>

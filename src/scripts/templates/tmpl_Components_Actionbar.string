@@ -1,0 +1,17 @@
+<div id="tmpl_Components_Actionbar">
+    <article>
+        <header>
+            <h1>行为栏</h1>
+        </header>
+        <section>
+            <p>页面顶端行为栏，可以放置自定义模板，每个元素可以被禁用，页面顶部是示例。支持链式调用。基于popbox组件。</p>
+            <p>
+            <pre>
+                初始化代码
+                $(".actionbar").actionbar().setTitle("user","测试title").setContent("user","htmlTmpl");
+            </pre>
+            </p>
+
+        </section>
+    </article>
+</div>

@@ -20,9 +20,7 @@
 			}
 			else
 				window.location.href=$.CONFIG.userCenter;
-				
-			$.CONFIG.MenuView.menuArr = data[0];
-			$(".chu_menu").menuView(true);
+			$(".chu_menu").menuView(true,data[0]);
 			if( window.location.hash == '')$( "[data-path='"+$.CONFIG.MenuView.index+"']" ).trigger("click");
 
 
@@ -39,17 +37,6 @@
 					$.toast("success","初始化成功！");
 				});
 			});
-
-			window.addEventListener("message", function(event) {
-					try {
-						var externalCall = JSON.parse(event.data);
-						marvin.onReady(function() {
-							marvin.sketcherInstance[externalCall.method].apply(marvin.sketcherInstance, externalCall.args);
-						});
-					} catch (e) {
-						console.log(e);
-					}
-				}, false);
 			
 	});
 
@@ -65,6 +52,7 @@
 
     //监听自定义事件
     $(document).on("Init",function  (event, data) {
+		$el = data&&data.__init_target || "";
 		//清除所有实时请求
 		$.Constanty.clear();
 		$.toast.remove();
@@ -73,7 +61,7 @@
 		//检查数据
 
 		//data-bind 数据绑定
-		$('[data-bind]').each(function () {
+		$($el + ' [data-bind]').each(function () {
 			var $this = $(this),
 				source = $this.data("bind")
 				;
@@ -85,31 +73,29 @@
 		});
 		//检查数据
 		$.Checkdata.run(data);
-		$('[data-tooltip]').tooltip();
-		$('[data-loadbar]').loadbar();
-		$('[data-tabs]').tabs();		
-		$('[data-multable').multable();
-		if(data && data.data){
+		$($el + ' [data-tooltip]').tooltip();
+		$($el + ' [data-loadbar]').loadbar();
+		$($el + ' [data-tabs]').tabs();		
+		$($el + ' [data-multable').multable();
 		var date = new Date();
-			$('[data-datediv]').datediv(data.data,date.getFullYear(),date.getMonth());
-		}
+		$($el + ' [data-datediv]').datediv(data&&data.data || {} ,date.getFullYear(),date.getMonth());
 		if(data && data.data && data['data'].item_count != undefined){
-			$('[data-tablekit]').tablekit({
+			$($el + ' [data-tablekit]').tablekit({
 				item_count:data['data'].item_count
 			});
 		}
 		else{
-			$('[data-table]').table();
+			$($el + ' [data-table]').table();
 		}
-		$('[data-seekbar]').seekbar();
+		$($el + ' [data-seekbar]').seekbar();
 		if(data && data.data)
-			$('[data-treeview]').menuView(true,'treeview',data.data);
-		$('[data-step]').step();
-		$('[data-optionbtn]').optionbtn();
-		$('[data-cascade]').cascade();
-		$('[data-cascadebtn]').cascadebtn();
-		$('[data-select]').select();
-		$('[data-dropdown]').dropdown();
+			$($el + ' [data-treeview]').menuView(true,data.data,'treeview');
+		$($el + ' [data-step]').step();
+		$($el + ' [data-optionbtn]').optionbtn();
+		$($el + ' [data-cascade]').cascade();
+		$($el + ' [data-cascadebtn]').cascadebtn();
+		$($el + ' [data-select]').select();
+		$($el + ' [data-dropdown]').dropdown();
 	});
 
 	//table初始化事件
@@ -324,8 +310,8 @@
     });
 
 	$(document).on('Datediv_datechange',function (event,obj) {
-		var url = obj.element.data("url")
-			;
+		var url = obj.element.data("url");
+
 		if(!url)return;
 		$.Ajax.getData({
 			url : $.Depath.getURL(url),
@@ -343,7 +329,7 @@
 		var curLi  = tabsobj.curLi,
 			target = tabsobj.target,
 			tmplid = tabsobj.tmpl,
-			uri = curLi.data("nopath"),
+			uri = curLi.data("url"),
 			uriprasearr = $.Depath.parse(uri),
 			data = $.Depath.parse(window.location.hash.slice(1)).data
 			;
@@ -352,8 +338,13 @@
 			return;
 		$.toast.remove("nopath-tabs");
 		$.Ajax.abort("nopath-tabs");
-		$.Ajax.getData({
-	    		url: curLi.data("url") || $.Depath.getURL(uri,uriprasearr),
+		if(!$.Depath.getURL(uri,uriprasearr)){
+			$(target).html($.CONFIG.getTMPL(tmplid)(data));			
+			$(document).trigger('Init',{__init_target:target});
+		}
+		else{
+			$.Ajax.getData({
+	    		url: $.Depath.getURL(uri,uriprasearr),
 	    		data : $.extend(data,uriprasearr.data)
 	    	},
 	    	"nopath-tabs",
@@ -361,11 +352,11 @@
 	    		//获取模板
 	    		var	tmpl = $.CONFIG.getTMPL(tmplid);
 	    		if(!tmpl) throw new Error("");
-				console.log(target);
 	    		$(target).html(tmpl(data));
-	    		check_chart(data);
-				$(document).trigger('Init');
+	    		//check_chart(data);
+				$(document).trigger('Init',{__init_target:target});
 	    	});	
+		}
 	});
 
 
@@ -459,6 +450,7 @@
 			pagedata = $.Depath.parse(window.location.hash.slice(1)).data,
 			url = $this.data("url"),
 			tmpl = $this.data("tmpl"),
+			__init_target = "#"+tmpl,
 			target = $this.closest("[data-dialog]").data("dialog")
 			;
 		if(!$this.hasClass('btn-forbidden')){ // 2015.12.9加判断
@@ -471,7 +463,9 @@
 			if(url){
 				var urlarr = $.Depath.parse(url);
 				var Url = $.Depath.getURL( url,urlarr );
-				var __data = $.extend(pagedata,fdata,urlarr.data);
+				var __data = $.extend(pagedata,fdata,urlarr.data,{
+					__init_target:__init_target
+				});
 				$.Ajax.getData({
 				url:Url,
 				data:__data
@@ -487,7 +481,9 @@
 			else{
 				tmpl = Handlebars.compile(QTMPL[tmpl]);
 				target.setContent(tmpl($.extend(fdata,pagedata)));
-				$(document).trigger("Init");
+				$(document).trigger("Init",{
+					__init_target:__init_target
+				});
 			}
 		}
 	});

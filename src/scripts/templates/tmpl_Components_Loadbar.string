@@ -1,0 +1,25 @@
+<div id="tmpl_Components_Timetree">
+    <article>
+        <header>
+            <h1>进度条</h1>
+        </header>
+        <section>
+            <p>进入页面时使用，代码如下</p>
+            <pre>
+                var pageloadbar = $("#load_page .load_bar").loadbar({
+                    width:"300px",
+                    height:"10px",
+                    speed : 700,
+                    auto : false
+                }).loadbar("setValue",40);
+
+                pageloadbar.loadbar("finish", function () {
+                    $("#load_page").animate({height:"0"},"normal",function  () {
+                        $("#load_page").remove();
+                        $.toast("success","初始化成功！");
+                    });
+                });
+            </pre>
+        </section>
+    </article>
+</div>

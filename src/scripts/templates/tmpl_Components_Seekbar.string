@@ -1,0 +1,24 @@
+<div id="tmpl_Components_Actionbar"> 
+    <article>
+        <header>
+            <h1>滑块</h1>
+        </header>
+        <section>
+            <p>滑块功能 支持表单提交功能</p>
+            <input id="ex5" type="text" data-seekbar data-min="-5" data-max="20" data-step="1" data-value="0"/>
+            <p>
+            要求元素 input
+            注意 滑动条的长度等于input的长度
+            data-api
+            <pre>
+                data-seekbar ： 触发初始化
+                data-min ：最小值 默认为0
+                data-max : 最大值 默认为10
+                data-step：步长 默认为1
+                data-width：初始化后input的宽度，为0时或没有此项时不显示
+            </pre>
+            </p>
+            
+        </section>
+    </article>
+</div>

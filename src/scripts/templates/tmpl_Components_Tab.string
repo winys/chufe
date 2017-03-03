@@ -1,0 +1,39 @@
+<div id="tmpl_Components_Actionbar">
+    
+    <article>
+        <header>
+            <h1>选项卡</h1>
+        </header>
+        <section>
+            <p>提供选项卡切换功能</p>
+            </p>
+                <div class="sinfo">
+                    <div class="nav_tabs">
+                       <ul class="tabs" data-tabs data-panel=".vm_detail_tabs">
+                        <li data-tmpl="tmpl_Components_Actionbar" data-url="/Components/Actionbar/" >
+                            <a>规则列表</a>
+                        </li>
+                         <li data-tmpl="tmpl_Components_Dialog" data-url="/Components/Dialog/" >
+                            <a>监控行为</a>
+                        </li>
+                        <li data-tmpl="tmpl_Components_Tooltip" data-url="/Components/Tooltip/" >
+                            <a>资源管理</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="vm_detail_tabs panel">
+                    </div>
+                </div>
+            </p>
+            <p>
+            data-api
+            <pre>
+                data-panel ：显示位置的class 要求在 ul上
+                data-tmpl ：选项卡模板 在每个li上
+                data-url ： 每个li上，后台数据定位字符串（没有该字段则不请求）
+            </pre>
+            </p>
+
+        </section>
+    </article>
+</div>

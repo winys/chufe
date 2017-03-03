@@ -1,0 +1,23 @@
+<div id="tmpl_Components_Step">
+    
+    <article>
+        <header>
+            <h1>步骤组件</h1>
+        </header>
+        <section>
+            <p>提供步骤功能，演示如下：</p>
+            </p>
+            <div class="btn" data-dialog data-tmpl="tmpl_Components_Step_example"><span>点击我展示step组件</span></div>
+            </p>
+            <p>
+            data-api
+            <pre>
+                data-panel ：显示位置的class 要求在 ul上
+                data-tmpl ：选项卡模板 在每个li上
+                data-url ： 每个li上，后台数据定位字符串（没有该字段则不请求）
+            </pre>
+            </p>
+
+        </section>
+    </article>
+</div>
