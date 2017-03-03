@@ -6,7 +6,7 @@ A single-page framework based on jQuery!
 
 ##### Tools
 
-`chufe` use fekit[https://github.com/rinh/fekit] as building helper, so we need to install it.
+`chufe` use [fekit](https://github.com/rinh/fekit) as building helper, so we need to install it.
 
 ```
 npm install -g fekit
