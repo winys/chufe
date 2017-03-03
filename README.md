@@ -1,10 +1,10 @@
-### Chufe
+## Chufe
 
 ----------------------
 
 A single-page framework based on jQuery!
 
-##### Tools
+#### Tools
 
 `chufe` use [fekit](https://github.com/rinh/fekit) as building helper, so we need to install it.
 
@@ -24,7 +24,7 @@ fekit server
 
 Other command options will show to you when you typed `fekit` only;
 
-##### Doc
+#### Doc
 
 There is no doc for chufe, but a example;
 
