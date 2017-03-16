@@ -139,9 +139,10 @@ div.folder{
 	position: absolute;
 	left:50px;
 	top:0px;
+	max-height: 400px;
+	overflow: auto;
 	width: 200px;
 	background: #2b2b38;
-
 }
 .folder .menu_tree .has_item:hover .level-2{
 	display: block;

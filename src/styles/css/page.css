@@ -1,3 +1,11 @@
+::-webkit-scrollbar-thumb {
+    background: #6b6b6b;
+}
+::-webkit-scrollbar {
+    background: #1e1e1e;
+    width: 5px;
+    height: 5px;
+}
 #load_page{
 	position: relative;
 	height: 100%;
