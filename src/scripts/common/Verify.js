@@ -77,7 +77,7 @@ $.Reg = {
 				;
 			
 			data[$el.attr("name")]=$el.val();
-			// console.log(data);
+			
 			$.Ajax.getData({
 				url:$.Depath.getURL(url,urlarr),
 				data : data

@@ -1,7 +1,10 @@
 //这里用于声明一些data-api
 //同时有部分data-api在各自的模块中定义，这里定义一些全局的
 
-//data-nopath
+/**
+ * data-nopath 见官方文档介绍
+ * - 赋值到模板的数据有四种，第一种是传回来的数据；第二种是nopath对应uri带的数据；第三种是fdata；第四种是当前页面uri带的数据
+ */
 $(document).on('click','[data-nopath]:not(.btn-forbidden)',function(){
 	var $this = $(this),
 		nopath = $this.data("nopath"),			
@@ -11,9 +14,9 @@ $(document).on('click','[data-nopath]:not(.btn-forbidden)',function(){
 		tmplid = $this.data("tmpl") || uriprasearr["tmpl"],
 		fdata = $.CONFIG.getFdata($this.data("fdata")),
 		pagedata = $.Depath.parse(window.location.hash.slice(1)).data,
-		data = $.extend(fdata,uriprasearr["data"],pagedata)
+		data = $.extend(pagedata, fdata, uriprasearr["data"])
 		;
-//console.log(uriprasearr);
+
     $.Ajax.abort("nopath");
 	$.Ajax.getData({
     		url: url,
@@ -41,12 +44,20 @@ $(document).on('click','[data-nopath]:not(.btn-forbidden)',function(){
 
 });
 
-//data-refresh  页面刷新
+/**
+ * data-refresh
+ * - 触发全局刷新，相当于页面刷新
+ */
 $(document).on('click','[data-refresh]',function  () {
 	$(document).trigger("Depath");
 });
 
-//data-update 局部刷新
+/**
+* data-update
+* - 局部刷新，target为nopath对应的target，重新进行nopath操作
+* 
+* TODO: 模板数据只用ajaxdata，日后需要的话可以改进
+*/
 $(document).on('click','[data-update]',function  () {
     var $this = $(this),
         source = $this.data("update")

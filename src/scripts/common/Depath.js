@@ -5,6 +5,15 @@
 var Depath = function () {
 };
 
+/**
+* Depath.parse 解析 uri 函数
+* - 返回值为 (例如/Components/Dialog/?id=888)
+    {
+        "uriarr":["Components","Dialog"],
+        "tmpl":"tmpl_Components_Dialog",
+        "data":{"id":"888"}
+    }
+*/
 Depath.parse = function  (uri) {
     if (uri == "/" || !uri)
         return {
@@ -31,7 +40,7 @@ Depath.parse = function  (uri) {
     if (typeof tempMap == "object"){
         uriarr.push($.CONFIG.indexpage);
     }
-    // console.log(uriarr);
+
     result["tmpl"] =  "tmpl_" + uriarr.join("_");
 
     //解析参数
@@ -43,9 +52,15 @@ Depath.parse = function  (uri) {
         }
         result["data"] = data;
     }
+    
     return result;    
 }
 
+/**
+* Depath.getURL 获取数据对应服务器地址
+* param1 path 即uri
+* parseArr Depath.parse(uri)的返回值
+*/
 Depath.getURL = function  ( path, parseArr) {
     parseArr = parseArr || Depath.parse(path);
     //判断是否启用了地址映射
@@ -71,12 +86,15 @@ Depath.getURL = function  ( path, parseArr) {
         }
         else{
             return $.CONFIG.server + path;
-        }
-        // console.log(tempMap);
-        
+        }        
     }
+    return path;
 }
 
+/**
+* Depath.hash hash改变触发函数
+* data-path的实现
+*/
 Depath.hash = function  (event) {
     var uri = window.location.hash.slice( 1 ),
         $element = $("[data-path='" + uri+"']"),
@@ -109,9 +127,11 @@ Depath.hash = function  (event) {
             throw new Error("No template is finded ! Tmpl's Name is '" + tmpl_id + "'");
         };//alert(window.QTMPL[tmpl_id]);
         var tmpl = Handlebars.compile(window.QTMPL[tmpl_id]);
+
+        //数据包含2部分：返回数据 + uri中解析得到的数据
+        data.data = $.extend(data.data, parseArr.data)
         $el.html(tmpl(data));
-        $(document).trigger("Init",data);  
-        
+        $(document).trigger("Init",data);        
     });
 }
 

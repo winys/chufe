@@ -104,57 +104,24 @@
 		if($el.length == 0)
 			$el = table.element.closest("[data-table]");
 		$el.find("[data-group]").addClass("btn-forbidden");
-		$el.find("[data-itemid]").each(function  () {
+		
+		//将id设置到fdata上，可以在对话框等组件中使用
+		$el.find("[data-trid]").each(function  () {
 			var $this = $(this);
 			$this.data("fdata", {
 				id : $this.closest("tr").attr("id")
 			});
 		});
-		$el.find("[data-detail]").each(function  () {
-			var $this = $(this);
-			$this.data("fdata", {																		
-				id : $this.closest("tr").attr("id")
-			});
-		});
-		$el.find("[data-edit]").each(function  () {
-			var $this = $(this);
-			$this.data("fdata", {
-				id : $this.closest("tr").attr("id")
-			});
-			$this.data("success",function () {
-				var tablekit = $this.closest("[data-tablekit]").data("tablekit");
-				if (tablekit) $(document).trigger('tablekit_change',tablekit);
-			});
-		});
-		$el.find("[data-remove]").each(function  () {
-			var $this = $(this);
-			$this.data("fdata", {
-				id : $this.closest("tr").attr("id")
-			});
-		});
-		$el.find("[data-add]").each(function  () {
+
+		//在执行成功时刷新列表
+		$el.find("[data-asyc-fresh]").each(function  () {
 			var $this = $(this);
 			$this.data("success",function () {
 				var tablekit = $this.closest("[data-tablekit]").data("tablekit");
 				if (tablekit) $(document).trigger('tablekit_change',tablekit);
 			});
 		});
-		$el.find("[data-delete]").each(function  () {
-			var $this = $(this);
-			$this.data("fdata", {
-				id : $this.closest("tr").attr("id")
-			});
-			$this.data("success",function () {
-				var tablekit = $this.closest("[data-tablekit]").data("tablekit");
-				if(tablekit == undefined){
-					var table = $this.closest("[data-table]").data("table");
-					table.delRow($this.closest("tr").attr("id"),function(){});
-				}
-				else{
-					if (tablekit) $(document).trigger('tablekit_change',tablekit);
-				}
-			});
-		});
+
 		$el.find("[data-classify]").each(function  () {
 			var $this = $(this);
 			var devicetype = null;
@@ -278,6 +245,12 @@
 	        data = $.Depath.parse(window.location.hash.slice(1)).data
 			;
 
+		//获取绑定数据 [data-table]元素中的data-bind属性对应的值，多个用空格隔开，没有返回 ""
+		var bind_data = {};
+		(tablekit.target.data("bind")||"").split(/\s* \s*/).forEach(function(item){
+			bind_data[item] = $.pagedata["data"][item] || "";
+		});
+		
 		if(!$.pagedata || !$.pagedata["data"] || !$.pagedata["data"].table){
 	    	
 			$.Ajax.postData({

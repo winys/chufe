@@ -4,7 +4,7 @@
  *  对所有data-submit属性绑定事件
  */
  
- //处理submit事件 自带验证Buff
+//处理submit事件 自带验证Buff
 $(document).on("click.form.submit","[data-submit]:not(.btn-forbidden)",function(){
  	var $elem = $(this),
 		form = $elem.closest("form"),
